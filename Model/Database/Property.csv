@@ -1,0 +1,12 @@
+idProperty,Landlord_id,Apartment_type,No_of_bedrooms,No_of_bathrooms,Furnished,Unfurnished,City_quadrant,Status,Address
+prop01,MxBy01,Apartment,2,1.5,0,1,SE,Active,2381 Milton Corner Suite 396
+prp02,MxBy01,Attached House,4,2,1,0,NW,Active,2388 Tchesinkut Lake Rd
+prpoq03,MxBy01,Townhouse,2,2.5,1,0,SW,Active,765 Heritage Drive
+prq04,BlDy02,Attached House,1,1,0,1,NE,Active,1239 Bank St
+pqro05,BlDy02,Unattached House,3,3,1,0,SW,Rented,3723 Ganges Road
+prop06,SeTx03,Apartment,4,3,0,1,SE,Rented,850 Mayer Park Apt. 340
+prop07,SeTx03,Bungalow,3,3,1,0,NW,Active,4655 Craven Place 
+pqro08,SeTx03,Apartment,1,1,0,1,SW,Active,5786 Glenna Tunnel Apt. 279
+prpoq09,TmAe04,Townhouse,2,2.5,1,0,SW,Cancelled,1337 Awesome Street
+prop10,TyLJs05,Unattached House,10,7.5,1,0,SW,Active,412 Rich Grove Street
+prop11,TyLJs05,Apartment,3,3.5,1,0,NE,Active,137 Murphy Streets Apt. 977
