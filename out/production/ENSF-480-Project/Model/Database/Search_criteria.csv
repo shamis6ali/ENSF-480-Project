@@ -1,0 +1,6 @@
+idSearch,Apartment_type,No_of_bedrooms,No_of_bathrooms,Furnished,Unfurnished,City_quadrant,idRenter
+s01,Apartment,2,0,1,0,SW,TgTi01
+s02,Any,0,3,1,1,Any,BgTs02
+s03,Townhouse,0,0,1,0,SW,RyJi03
+s04,Any,2,2,1,1,NE,SzJz04
+s05,Unattached ,0,3,0,1,NW,NiTSs05
