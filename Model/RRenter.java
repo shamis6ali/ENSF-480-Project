@@ -1,6 +1,6 @@
 package Model;
 
-public class RRenter {
+public class RRenter implements SearchEnable {
     private String idrenter;
     private String name;
     private String username;
