@@ -168,6 +168,7 @@ CREATE TABLE `RRenter` (
   `Name` varchar(100) DEFAULT NULL,
   `Username` varchar(45) DEFAULT NULL,
   `Password` varchar(50) DEFAULT NULL,
+  `Subscribe` int DEFAULT NULL,
   PRIMARY KEY (`idRenter`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -178,7 +179,7 @@ CREATE TABLE `RRenter` (
 
 LOCK TABLES `RRenter` WRITE;
 /*!40000 ALTER TABLE `RRenter` DISABLE KEYS */;
-INSERT INTO `RRenter` VALUES ('BgTs02','Big Tings','tingsgoboom','123456789'),('NiTSs05','Naomi Teehee-Shillings','shoo111','verynicepassword'),('RyJi03','Ray Joani','jaonisoo','big123pass@'),('SzJz04','Suazz Juazz','juazzzzz','paszzzz123'),('TgTi01','Thang Thi','thi1233','bigpassword123');
+INSERT INTO `RRenter` VALUES ('BgTs02','Big Tings','tingsgoboom','123456789',1),('NiTSs05','Naomi Teehee-Shillings','shoo111','verynicepassword',0),('RyJi03','Ray Joani','jaonisoo','big123pass@',1),('SzJz04','Suazz Juazz','juazzzzz','paszzzz123',0),('TgTi01','Thang Thi','thi1233','bigpassword123',0);
 /*!40000 ALTER TABLE `RRenter` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -223,4 +224,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-08  8:54:45
+-- Dump completed on 2021-12-08 22:51:12

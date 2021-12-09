@@ -32,9 +32,9 @@ public class RRenter implements SearchEnable {
         return password;
     }
 
-    @Override
-    public void update() {
 
+    public void update() {
+    System.out.println("check");
     }
 
 
