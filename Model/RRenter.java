@@ -5,12 +5,15 @@ public class RRenter implements SearchEnable {
     private String name;
     private String username;
     private String password;
+    private int subscribe;
 
-    public RRenter(String idrenter, String name, String username, String password) {
+    public RRenter(String idrenter, String name, String username, String password,int subscribe) {
         this.idrenter = idrenter;
         this.name = name;
         this.username = username;
         this.password = password;
+        this.subscribe=subscribe;
+
     }
 
     public String getIdrenter() {

@@ -95,8 +95,8 @@ public class ImportData {
             // get all the records from manufacturer table
             Statement myStmt = (Statement) connection.getDbConnect().createStatement();
             String query = "SELECT * FROM " + "RRenter";
-            String[] registRenterS = new String[4];
-            String[] columns = { "idRenter", "Name", "Username", "Password" };
+            String[] registRenterS = new String[5];
+            String[] columns = { "idRenter", "Name", "Username", "Password","Subscribe" };
 
             connection.setResults(((java.sql.Statement) myStmt).executeQuery(query));
 
@@ -106,7 +106,8 @@ public class ImportData {
                 for (int i = 0; i < columns.length; i++) {
                     registRenterS[i] = connection.getResults().getString(columns[i]);
                 }
-                this.registRenters.add(new RRenter(registRenterS[0],registRenterS[1],registRenterS[2], registRenterS[3]));
+                this.registRenters.add(new RRenter(registRenterS[0],registRenterS[1],registRenterS[2], registRenterS[3],
+                        Integer.parseInt(registRenterS[4])));
             }
         } catch (SQLException ex) {
             // if a sql exception occurs print stack of errors
