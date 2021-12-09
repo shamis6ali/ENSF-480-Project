@@ -1,12 +1,12 @@
 package Model;
 import java.util.*;
-public class Search {
+public class Search  {
     private String type;
     private int bed;
     private int bath;
     private boolean furn;
     private String quad;
-   // private Database accessDb;
+    private ImportData datab;
 
     public Search(String type, int bed, int bath, boolean furn, String quad) {
         this.type = type;
@@ -15,5 +15,8 @@ public class Search {
         this.furn = furn;
         this.quad = quad;
     }
+
+
+
 
 }

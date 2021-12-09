@@ -1,6 +1,6 @@
 package Model;
 
-public class RRenter {
+public class RRenter implements Observer {
     private String idrenter;
     private String name;
     private String username;
@@ -28,4 +28,11 @@ public class RRenter {
     public String getPassword() {
         return password;
     }
+
+    @Override
+    public void update() {
+
+    }
+
+
 }
