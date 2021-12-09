@@ -1,6 +1,6 @@
-idRenter,Name,Username,Password
-TgTi01,Thang Thi,thi1233,bigpassword123
-BgTs02,Big Tings,tingsgoboom,123456789
-RyJi03,Ray Joani,jaonisoo,big123pass@
-SzJz04,Suazz Juazz,juazzzzz,paszzzz123
-NiTSs05,Naomi Teehee-Shillings,shoo111,verynicepassword
+idRenter,Name,Username,Password,Subscribe
+TgTi01,Thang Thi,thi1233,bigpassword123,0
+BgTs02,Big Tings,tingsgoboom,123456789,1
+RyJi03,Ray Joani,jaonisoo,big123pass@,1
+SzJz04,Suazz Juazz,juazzzzz,paszzzz123,0
+NiTSs05,Naomi Teehee-Shillings,shoo111,verynicepassword,0
