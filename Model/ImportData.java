@@ -40,6 +40,7 @@ public class ImportData {
 
     public List<Property> getProperties() {
         return properties;
+
     }
 
     public List<SearchCriteria> getSearches() {
