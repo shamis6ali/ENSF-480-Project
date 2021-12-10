@@ -12,8 +12,10 @@ public class LoginController {
     ImportData model = new ImportData(dbsPath,
             dbsUser,dbsPass);
 
+    public List<RRenter> rentList = model.getRegistRenters();
+    public List<Landlord> landList = model.getLandlords();
+
     public boolean rLogin(String username, String password) { //might not even need to be static
-        List<RRenter> rentList = model.getRegistRenters();
         boolean valid = false;
         for (int i = 0; i < rentList.size(); i++) {
             if (username == rentList.get(i).getUsername() && password == rentList.get(i).getPassword())
@@ -57,31 +59,33 @@ public class LoginController {
         return valid;
     }
 
-    public void rRegister(String id, String name, String username, String password, String email) {
-        //remove id's of users, username alone should be fine and unique, and email for notifications
-        String renter[] = {id, name, username, password};
+    public boolean rRegister(String name, String username, String password) {
+        boolean reg = true;
+        for (int i = 0; i < rentList.size(); i++) {
+            if (username == rentList.get(i).getUsername()) {
+                valid = false;
+                System.out.println("username already exists");
+            }
+        }
+        String renter[] = {name, username, password};
         Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", renter);
+        System.out.println("registered!");
+        return reg;
     }
 
-//    public void rRegister(String name, String username, String password, String email) {
-//        //remove id's of users, username alone should be fine and unique, and email for notifications
-//        String renter[] = {name, email, username, password};
-//        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", renter);//ensure subsribed =0
-//    }
-
-    public void lRegister(String id, String name, String username, String password) {
-        //remove id's of users, username alone should be fine and unique, and email for notifications
+    public boolean lRegister(String id, String name, String username, String password) {
+        boolean reg = true;
+        for (int i = 0; i < landList.size(); i++) {
+            if (username == landList.get(i).getUsername()) {
+                valid = false;
+                System.out.println("username already exists");
+            }
+        }
         String landlord[] = {id, name, username, password};
         Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", landlord);
+        System.out.println("registered!");
+        return reg;
     }
-
-    //preferred:
-//    public void lRegister(String name, String username, String password) {
-//        //remove id's of users, username alone should be fine and unique, and email for notifications
-//        String landlord[] = {name, username, password};
-//        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", landlord);
-//    }
-
-
+    
 
 }
