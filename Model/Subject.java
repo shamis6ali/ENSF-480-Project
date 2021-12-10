@@ -7,8 +7,6 @@ public interface Subject{
     public void unsubscribe(Observer o);
     public void notifyObservers();
 
-
-
 }
 
 
