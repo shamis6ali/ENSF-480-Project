@@ -16,7 +16,7 @@ public class Connecting {
      */
     private static String password;
     /**
-     * Database URL for inventory.sql
+     * Database URL for SQL File.sql
      */
     private static String dbUrl;
     /**
@@ -49,7 +49,7 @@ public class Connecting {
     /**
      * Constructor for the Connection class that allows to make a connection
      *
-     * @param dburl    Database URL for the inventory.sql
+     * @param dburl    Database URL for the SQL File.sql
      * @param username Username
      * @param password Password
      */
