@@ -34,4 +34,9 @@ public class RRenter implements SearchEnable, Observer {
     }
 
     public String getEmail() { return email; }
+
+    @Override
+    public void update() {
+
+    }
 }
