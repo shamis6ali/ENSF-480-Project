@@ -59,7 +59,7 @@ public class LoginController {
         return valid;
     }
 
-    public boolean rRegister(String name, String username, String password) {
+    public boolean rRegister(String name, String username, String password, String email) {
         boolean reg = true;
         for (int i = 0; i < rentList.size(); i++) {
             if (username == rentList.get(i).getUsername()) {
@@ -68,7 +68,7 @@ public class LoginController {
                 return reg;
             }
         }
-        String renter[] = {name, username, password};
+        String renter[] = {name, username, password, email};
         Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", renter);
         System.out.println("registered!");
         return reg;
