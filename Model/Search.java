@@ -17,6 +17,9 @@ public class Search  {
         properties = datab.getProperties();
         criteria = datab.getSearches();
     }
+    public Search(ImportData d){
+        datab = d;
+    }
 
     /*
      *  The function will iterate the properties and check for matching search criteria
@@ -45,8 +48,8 @@ public class Search  {
             //essentially if a criteria is not matching, we immediately move to the next iteration
             // making sure the 'any' criteria is also not selected.
             //if all the criteria matches, then we will add the property id to the temp list
-
-            if(!p.getApartmentType().equals(type)  && !type.equals("any"))continue;//make preference isn't 'any if it doesn't match
+            if(!p.getStatus().equals("Active")) continue;
+            else if(!p.getApartmentType().equals(type)  && !type.equals("any"))continue;//make preference isn't 'any if it doesn't match
             else if(p.getNoOfBedrooms() != bed && bed != 0)continue;
             else if(p.getNoOfBathrooms() != bath && bath != 0)continue;
             else if (p.getFurnished() != furn && (unfurn == 0))continue;//make sure both furn and unfurn aren't 1
@@ -78,8 +81,8 @@ public class Search  {
         this.quad = cityQuadrant;
 
         for(Property p : properties){//iterate each property
-
-            if(!p.getApartmentType().equals(type)  && !type.equals("any"))continue;//make preference isn't 'any if it doesn't match
+            if(!p.getStatus().equals("Active")) continue;
+            else if(!p.getApartmentType().equals(type)  && !type.equals("any"))continue;//make preference isn't 'any if it doesn't match
             else if(p.getNoOfBedrooms() != bed && bed != 0)continue;
             else if(p.getNoOfBathrooms() != bath && bath != 0)continue;
             else if (p.getFurnished() != furn && (unfurn == 0))continue;//make sure both furn and unfurn aren't 1
@@ -89,6 +92,31 @@ public class Search  {
         }
     return false;
     }
+
+    public boolean checkPropertySearchCriteria(SearchCriteria s){//hmmm gotta check
+        updateLists();
+        this.type = s.getApartmentType();
+        this.bed = s.getNoOfBedrooms();
+        this.bath = s.getNoOfBathrooms();
+        this.furn = s.getFurnished();
+        this.unfurn = s.getUnfurnished();
+        this.quad = s.getCityQuadrant();
+
+        for(Property p : properties){
+            if(!p.getStatus().equals("Active")) continue;
+            else if(!p.getApartmentType().equals(type)  && !type.equals("any"))continue;//make preference isn't 'any if it doesn't match
+            else if(p.getNoOfBedrooms() != bed && bed != 0)continue;
+            else if(p.getNoOfBathrooms() != bath && bath != 0)continue;
+            else if (p.getFurnished() != furn && (unfurn == 0))continue;//make sure both furn and unfurn aren't 1
+            else if(p.getUnfurnished() != unfurn && (furn == 0))continue;
+            else if (!p.getCityQuadrant().equals(quad) && !quad.equals(("any")))continue;//same idea as checking 'type'
+            else return true;
+        }
+        return false;
+
+
+    }
+
 
 
 

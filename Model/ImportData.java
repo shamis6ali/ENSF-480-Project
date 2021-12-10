@@ -1,9 +1,10 @@
 package Model;
-
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+//import java.sql.SQLException;
+//import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ImportData {
     private List<Landlord> landlords;
@@ -39,6 +40,7 @@ public class ImportData {
     }
 
     public List<Property> getProperties() {
+        updateLists();
         return properties;
 
     }
@@ -57,6 +59,12 @@ public class ImportData {
 
     public Connecting getConnect() {
         return connect;
+    }
+
+    public void updateLists(){
+        connect = new Connecting(DBURL, USERNAME, PASSWORD);
+        fillArrays(connect);
+        connect.close();
     }
 
     private void landlordFill(Connecting connection) {
@@ -260,16 +268,47 @@ public class ImportData {
 
     //TODO the method is not correctly implemented
 
+    //    public void update(String table, String id) {
+//        // make sure table being modified is not manufacturer table
+//        // make a connection to inventory.sql database from database info
+//        Connecting newConnect = new Connecting(this.DBURL, this.USERNAME, this.PASSWORD);
+//        // try to delete specific records from a specified table
+//        try {
+//            String query = "DELETE FROM " + table + " WHERE " + "ID = ?";
+//            PreparedStatement mystmt = newConnect.getDbConnect().prepareStatement(query);
+//            mystmt.setString(1, id);
+//
+//            // update the arraylists and close connection
+//            mystmt.executeUpdate();
+//            fillArrays(newConnect);
+//            newConnect.close();
+//
+//        } catch (SQLException ex) {
+//            // if a sql exception occurs print stack of errors
+//            ex.printStackTrace();
+//        }
+//    }
 
-    public void update(String table, String id) {
-        // make sure table being modified is not manufacturer table
-        // make a connection to inventory.sql database from database info
+    public void fillArrays(Connecting connection) {
+        // upon call fills all the arraylists, one for each table in inventory.sql
+        // database
+        this.landlordFill(connection);
+        this.managersFill(connection);
+        this.rentersFill(connection);
+        this.propertyFill(connection);
+        this.searchFill(connection);
+    }
+
+    public void removeEntity( String table,String foreignKeyName, String ID){
+
+
+
         Connecting newConnect = new Connecting(this.DBURL, this.USERNAME, this.PASSWORD);
         // try to delete specific records from a specified table
         try {
-            String query = "DELETE FROM " + table + " WHERE " + "ID = ?";
+            String query = "DELETE FROM " + table + " WHERE " + foreignKeyName + " = ?";
             PreparedStatement mystmt = newConnect.getDbConnect().prepareStatement(query);
-            mystmt.setString(1, id);
+            mystmt.setString(1, ID);
 
             // update the arraylists and close connection
             mystmt.executeUpdate();
@@ -282,16 +321,12 @@ public class ImportData {
         }
     }
 
+    //public void addProperty(String
 
-    public void fillArrays(Connecting connection) {
-        // upon call fills all the arraylists, one for each table in inventory.sql
-        // database
-        this.landlordFill(connection);
-        this.managersFill(connection);
-        this.rentersFill(connection);
-        this.propertyFill(connection);
-        this.searchFill(connection);
-    }
+
+
+
+
 
 
 
