@@ -1,11 +1,11 @@
 package Model;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public interface Subject{
     public void subscribe(Observer o);
     public void unsubscribe(Observer o);
-    public void notifyO();
+    public void notifyObservers();
 
 
 
@@ -13,9 +13,10 @@ public interface Subject{
 
 
 class Notification implements Subject  {
-    private ArrayList<Observer> observers;
-    public void subscribe(Observer o){
+    private List<Observer> observers;
 
+    public void subscribe(Observer o){
+    observers.add(o);
     }
 
     public Notification() {
@@ -24,11 +25,11 @@ class Notification implements Subject  {
 
     @Override
     public void unsubscribe(Observer o) {
-
+    observers.remove(o);
     }
 
     @Override
-    public void notifyO() {
+    public void notifyObservers() {
 
     }
 }

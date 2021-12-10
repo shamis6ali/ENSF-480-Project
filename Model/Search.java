@@ -58,10 +58,38 @@ public class Search  {
         if(temp.size() != 0) return temp;
         else return null;
 
-
-
-
     }
+
+    /*This function will check if a property exists based on property criteria
+    * All the param will be the search criteria for a property
+    * @return true if property with given criteria exists, false otherwise
+     */
+    public boolean checkPropertyCriteria(String apartmentType, double noOfBedrooms,
+                                         double noOfBathrooms, int furnished,
+                                         int unfurnished, String cityQuadrant
+                                          ) {
+
+        updateLists();
+        this.type = apartmentType;
+        this.bed = noOfBedrooms;
+        this.bath = noOfBathrooms;
+        this.furn = furnished;
+        this.unfurn = unfurnished;
+        this.quad = cityQuadrant;
+
+        for(Property p : properties){//iterate each property
+
+            if(!p.getApartmentType().equals(type)  && !type.equals("any"))continue;//make preference isn't 'any if it doesn't match
+            else if(p.getNoOfBedrooms() != bed && bed != 0)continue;
+            else if(p.getNoOfBathrooms() != bath && bath != 0)continue;
+            else if (p.getFurnished() != furn && (unfurn == 0))continue;//make sure both furn and unfurn aren't 1
+            else if(p.getUnfurnished() != unfurn && (furn == 0))continue;
+            else if (!p.getCityQuadrant().equals(quad) && !quad.equals(("any")))continue;//same idea as checking 'type'
+            else return true;
+        }
+    return false;
+    }
+
 
 
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="ENSF-480-Project" options="--add-modules java.base,java.sql,java.desktop" />
+      <module name="ENSF-480-Project" options="--add-modules java.base,java.sql,java.desktop --add-exports java.base/java=ALL-UNNAMED" />
     </option>
   </component>
 </project>

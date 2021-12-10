@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="86caac59-86b6-45a6-8847-d0a7b3f34b9e" name="Changes" comment="" />
+    <list default="true" id="86caac59-86b6-45a6-8847-d0a7b3f34b9e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/RegisteredRenterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/RegisteredRenterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/RenterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/RenterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENSF-480-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ENSF-480-Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/ImportData.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/ImportData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/RRenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/RRenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Subject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ENSF-480-Project/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ENSF-480-Project/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/Test.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +46,24 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mysql-connector-java-8.0.27.jar" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="tasesta" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Model.Test" />
+      <module name="ENSF-480-Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -38,7 +73,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638992351850</updated>
+      <workItem from="1639089966674" duration="84000" />
+      <workItem from="1639090074167" duration="230000" />
+      <workItem from="1639090327113" duration="6163000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

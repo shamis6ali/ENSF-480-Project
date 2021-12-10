@@ -6,8 +6,8 @@ import java.util.List;
 public class Test {
     public static void main(String[] args) throws SQLException {
 
-        ImportData testData =  new ImportData("jdbc:mysql://127.0.0.1:3306/Online_Rental",
-                "root","root");
+        ImportData testData =  new ImportData("jdbc:mysql://127.0.0.1:3306/test",
+                "tom","password");
 
 //        List<Landlord> landList = testData.getLandlords();
 //

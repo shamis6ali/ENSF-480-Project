@@ -261,26 +261,26 @@ public class ImportData {
     //TODO the method is not correctly implemented
 
 
-//    public void update(String table, String id) {
-//        // make sure table being modified is not manufacturer table
-//        // make a connection to inventory.sql database from database info
-//        Connecting newConnect = new Connecting(this.DBURL, this.USERNAME, this.PASSWORD);
-//        // try to delete specific records from a specified table
-//        try {
-//            String query = "DELETE FROM " + table + " WHERE " + "ID = ?";
-//            PreparedStatement mystmt = newConnect.getDbConnect().prepareStatement(query);
-//            mystmt.setString(1, id);
-//
-//            // update the arraylists and close connection
-//            mystmt.executeUpdate();
-//            fillArrays(newConnect);
-//            newConnect.close();
-//
-//        } catch (SQLException ex) {
-//            // if a sql exception occurs print stack of errors
-//            ex.printStackTrace();
-//        }
-//    }
+    public void update(String table, String id) {
+        // make sure table being modified is not manufacturer table
+        // make a connection to inventory.sql database from database info
+        Connecting newConnect = new Connecting(this.DBURL, this.USERNAME, this.PASSWORD);
+        // try to delete specific records from a specified table
+        try {
+            String query = "DELETE FROM " + table + " WHERE " + "ID = ?";
+            PreparedStatement mystmt = newConnect.getDbConnect().prepareStatement(query);
+            mystmt.setString(1, id);
+
+            // update the arraylists and close connection
+            mystmt.executeUpdate();
+            fillArrays(newConnect);
+            newConnect.close();
+
+        } catch (SQLException ex) {
+            // if a sql exception occurs print stack of errors
+            ex.printStackTrace();
+        }
+    }
 
 
     public void fillArrays(Connecting connection) {
