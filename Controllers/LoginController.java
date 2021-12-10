@@ -65,6 +65,7 @@ public class LoginController {
             if (username == rentList.get(i).getUsername()) {
                 valid = false;
                 System.out.println("username already exists");
+                return reg;
             }
         }
         String renter[] = {name, username, password};
@@ -79,6 +80,7 @@ public class LoginController {
             if (username == landList.get(i).getUsername()) {
                 valid = false;
                 System.out.println("username already exists");
+                return reg;
             }
         }
         String landlord[] = {name, username, password};
