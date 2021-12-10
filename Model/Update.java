@@ -42,7 +42,11 @@ public class Update {
             ex.printStackTrace();
         }
 
+    }
 
+
+    public static void landlordRemove(String url, String username, String password, String [] information) throws SQLException{
+    Update updt = new Update(url, username, password);
 
     }
 
