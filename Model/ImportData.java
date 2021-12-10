@@ -299,27 +299,27 @@ public class ImportData {
         this.searchFill(connection);
     }
 
-    public void removeEntity( String table,String foreignKeyName, String ID){
-
-
-
-        Connecting newConnect = new Connecting(this.DBURL, this.USERNAME, this.PASSWORD);
-        // try to delete specific records from a specified table
-        try {
-            String query = "DELETE FROM " + table + " WHERE " + foreignKeyName + " = ?";
-            PreparedStatement mystmt = newConnect.getDbConnect().prepareStatement(query);
-            mystmt.setString(1, ID);
-
-            // update the arraylists and close connection
-            mystmt.executeUpdate();
-            fillArrays(newConnect);
-            newConnect.close();
-
-        } catch (SQLException ex) {
-            // if a sql exception occurs print stack of errors
-            ex.printStackTrace();
-        }
-    }
+//    public void removeEntity( String table,String foreignKeyName, String ID){
+//
+//
+//
+//        Connecting newConnect = new Connecting(this.DBURL, this.USERNAME, this.PASSWORD);
+//        // try to delete specific records from a specified table
+//        try {
+//            String query = "DELETE FROM " + table + " WHERE " + foreignKeyName + " = ?";
+//            PreparedStatement mystmt = newConnect.getDbConnect().prepareStatement(query);
+//            mystmt.setString(1, ID);
+//
+//            // update the arraylists and close connection
+//            mystmt.executeUpdate();
+//            fillArrays(newConnect);
+//            newConnect.close();
+//
+//        } catch (SQLException ex) {
+//            // if a sql exception occurs print stack of errors
+//            ex.printStackTrace();
+//        }
+//    }
 
     //public void addProperty(String
 

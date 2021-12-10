@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86caac59-86b6-45a6-8847-d0a7b3f34b9e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/ImportData.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/ImportData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Search.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ENSF-480-Project/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ENSF-480-Project/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ENSF-480-Project/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ENSF-480-Project/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/ImportData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/ImportData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/Notification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/RRenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/RRenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/Search.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/Search.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/Subject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/Subject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/Test.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +63,7 @@
       <updated>1638992351850</updated>
       <workItem from="1639089966674" duration="84000" />
       <workItem from="1639090074167" duration="230000" />
-      <workItem from="1639090327113" duration="13758000" />
+      <workItem from="1639090327113" duration="13879000" />
     </task>
     <servers />
   </component>
