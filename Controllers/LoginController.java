@@ -73,7 +73,7 @@ public class LoginController {
         return reg;
     }
 
-    public boolean lRegister(String id, String name, String username, String password) {
+    public boolean lRegister(String name, String username, String password) {
         boolean reg = true;
         for (int i = 0; i < landList.size(); i++) {
             if (username == landList.get(i).getUsername()) {
@@ -81,7 +81,7 @@ public class LoginController {
                 System.out.println("username already exists");
             }
         }
-        String landlord[] = {id, name, username, password};
+        String landlord[] = {name, username, password};
         Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", landlord);
         System.out.println("registered!");
         return reg;
