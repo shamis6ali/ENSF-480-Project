@@ -1,76 +1,43 @@
-//
-//import java.util.ArrayList;
-//
-//import views.RegisteredRenterView;
-//import views.RenterView;
-//
-//import models.Database;
-//import models.Property;
-//
-//public class RegisteredRenterController extends RenterController {
-//    private RegisteredRenterView view;
-//    private UserController login;
-//    private String username;
-//    private String password;
-//
-//    public RegisteredRenterController(Database model, RegisteredRenterView view, LoginController login,
-//            String username, String password) {
-//        super(model);
-//        this.view = view;
-//        this.login = login;
-//        this.username = username;
-//        this.password = password;
-//
-//    }
-//
-//    @Override
-//    public void addListener() {
-//        view.addButtonListener(e -> propertySearch(this.view));
-//        view.addLogoutListener(e -> { view.dispose();
-//                        login.start();
-//        });
-//        view.addSearchListener(e -> view.displaySearchPanel());
-//        view.addUnsubscribeListener(e -> unsubscribeRenter());
-//
-//        view.addSubsribeListener(e -> view.NotificationsPanel(model.getRenterNotifications(username)));
-//    }
-//
-//
-//    public void unsubscribeRenter() {
-//        view.("You have been unsubscribed");//or system.o.println
-//        model.unsubscribeNotification(username);
-//    }
-//
-//    public RegisteredRenterView getView() {
-//        return this.view;
-//    }
-//
-//    public void setView(RegisteredRenterView view) {
-//        this.view = view;
-//    }
-//
-//    public LoginController getLogin() {
-//        return this.login;
-//    }
-//
-//    public void setLogin(LoginController login) {
-//        this.login = login;
-//    }
-//
-//    public String getUsername() {
-//        return this.username;
-//    }
-//
-//    public void setUsername(String username) {
-//        this.username = username;
-//    }
-//
-//    public String getPassword() {
-//        return this.password;
-//    }
-//
-//    public void setPassowrd (String password) {
-//        this.password = password;
-//    }
-//
-//}
+package Controller;
+
+import Model.ImportData;
+import Model.Update;
+
+
+public class RegisteredRenterController {
+    String dbsUser = "root";
+    String dbsPass = "Hiba0105!";
+    String dbsPath = "jdbc:mysql://127.0.0.1:3306/Property_Rental";
+    ImportData model = new ImportData(dbsPath,
+            dbsUser,dbsPass);
+
+    public boolean subscribe (String username) {
+        List<RegisteredRenter> rentList = model.getRegisteredRenters();
+        boolean sub = false;
+        for (int i = 0; i < rentList.size(); i++) {
+            if (username == rentList.get(i).getUsername()) {
+//I NEED A SET SUBSCRIPTION METHOD! rentList.set(i).setSubscribe(1);
+                sub = true;
+            }
+            //if false is returned, view will show an invalid user error
+            //we can also use email for this which may be better?
+        }
+
+        return sub;
+    }
+
+    public boolean unsubscribe (String username) {
+        List<RegisteredRenter> rentList = model.getRegisteredRenters();
+        boolean unsub = false;
+        for (int i = 0; i < rentList.size(); i++) {
+            if (username == rentList.get(i).getUsername()) {
+//I NEED A SET SUBSCRIPTION METHOD! rentList.set(i).setSubscribe(0);
+                unsub = true;
+            }
+            //if false is returned, view will show an invalid user error
+            //we can also use email for this which may be better?
+        }
+
+        return unsub;
+    }
+}
