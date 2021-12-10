@@ -74,7 +74,7 @@ public class LoginController {
             }
         }
         String renter[] = {name, username, password, email};
-//        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", renter);
+        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", renter);
         System.out.println("registered!");
         return reg;
     }
@@ -89,7 +89,7 @@ public class LoginController {
             }
         }
         String landlord[] = {name, username, password};
-//        Update.landlordAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", landlord);
+       Update.landlordAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", landlord);
         System.out.println("registered!");
         return reg;
     }
