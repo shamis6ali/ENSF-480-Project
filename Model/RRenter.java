@@ -32,10 +32,16 @@ public class RRenter implements SearchEnable, Observer {
         return password;
     }
 
+<<<<<<< HEAD
 
     public void update() {
     System.out.println("check");
     }
 
 
+=======
+    public int getSubscribe() {
+        return subscribe;
+    }
+>>>>>>> main
 }

@@ -46,6 +46,9 @@ public class Test {
         String message[] = {"BlDy02", "BgTs02", "This is a test message"};
        // Update.messageAdd("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", message);
         Update.messageRemove("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", "BlDy02", "BgTs02");
+
+
+
 //        properties = testData.getProperties();
 //        for(Property p : properties){
 //            System.out.println(p.getIdProperty());

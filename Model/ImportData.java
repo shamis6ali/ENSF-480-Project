@@ -168,8 +168,9 @@ public class ImportData {
             // get all the records from manufacturer table
             Statement myStmt = (Statement) connection.getDbConnect().createStatement();
             String query = "SELECT * FROM " + "Property";
-            String[] propertyS = new String[10];
-            String[] columns = { "idProperty", "Landlord_id", "Apartment_type", "No_of_bedrooms","No_of_bathrooms","Furnished","Unfurnished","City_quadrant","Status","Address" };
+            String[] propertyS = new String[13];
+            String[] columns = { "idProperty", "Landlord_id", "Apartment_type", "No_of_bedrooms","No_of_bathrooms",
+                    "Furnished","Unfurnished","City_quadrant","Status","Address","Day","Month","Year" };
 
             connection.setResults(((java.sql.Statement) myStmt).executeQuery(query));
 
@@ -180,7 +181,9 @@ public class ImportData {
                     propertyS[i] = connection.getResults().getString(columns[i]);
                 }
                 this.properties.add(new Property(propertyS[0],propertyS[1],propertyS[2],Double.parseDouble(propertyS[3]),Double.parseDouble(propertyS[4]),
-                        Integer.parseInt(propertyS[5]),Integer.parseInt(propertyS[6]),propertyS[7],propertyS[8],propertyS[9]));
+                        Integer.parseInt(propertyS[5]),Integer.parseInt(propertyS[6]),propertyS[7],propertyS[8],propertyS[9],
+                        Integer.parseInt(propertyS[10]),
+                        Integer.parseInt(propertyS[11]),Integer.parseInt(propertyS[12])));
             }
         } catch (SQLException ex) {
             // if a sql exception occurs print stack of errors
