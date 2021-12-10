@@ -1,7 +1,6 @@
 package Controller;
 
-import Model.ImportData;
-import Model.Update;
+import Model.*;
 
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class LoginController {
             dbsUser,dbsPass);
 
     public boolean rLogin(String username, String password) { //might not even need to be static
-        List<RegisteredRenter> rentList = model.getRegisteredRenters();
+        List<RRenter> rentList = model.getRegistRenters();
         boolean valid = false;
         for (int i = 0; i < rentList.size(); i++) {
             if (username == rentList.get(i).getUsername() && password == rentList.get(i).getPassword())
@@ -61,7 +60,7 @@ public class LoginController {
     public void rRegister(String id, String name, String username, String password, String email) {
         //remove id's of users, username alone should be fine and unique, and email for notifications
         String renter[] = {id, name, username, password};
-        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", renter)
+        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", renter);
     }
 
 //    public void rRegister(String name, String username, String password, String email) {

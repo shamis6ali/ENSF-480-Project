@@ -1,7 +1,10 @@
 package Controller;
 
 import Model.ImportData;
+import Model.RRenter;
 import Model.Update;
+
+import java.util.List;
 
 
 public class RegisteredRenterController {
@@ -10,9 +13,9 @@ public class RegisteredRenterController {
     String dbsPath = "jdbc:mysql://127.0.0.1:3306/Property_Rental";
     ImportData model = new ImportData(dbsPath,
             dbsUser,dbsPass);
+    List<RRenter> rentList = model.getRegistRenters();
 
     public boolean subscribe (String username) {
-        List<RegisteredRenter> rentList = model.getRegisteredRenters();
         boolean sub = false;
         for (int i = 0; i < rentList.size(); i++) {
             if (username == rentList.get(i).getUsername()) {
@@ -27,7 +30,6 @@ public class RegisteredRenterController {
     }
 
     public boolean unsubscribe (String username) {
-        List<RegisteredRenter> rentList = model.getRegisteredRenters();
         boolean unsub = false;
         for (int i = 0; i < rentList.size(); i++) {
             if (username == rentList.get(i).getUsername()) {
