@@ -1,0 +1,54 @@
+package Controller;
+
+import Model.*;
+
+import java.util.ArrayList;
+import java.util.List;
+public class ManagerController {
+    String dbsUser = "root";
+    String dbsPass = "Hiba0105!";
+    String dbsPath = "jdbc:mysql://127.0.0.1:3306/Property_Rental";
+    ImportData model = new ImportData(dbsPath,
+            dbsUser,dbsPass);
+    public ManagerController() {
+        retrieveProperties();
+        retrieveLandlords();
+        retrieveRenters();
+
+        //or maybe just
+//        List<Property> props = model.getProperties();
+//        List<Landlord> landlords = model.getLandlords();
+//        List<RRenter> renters = model.getRegistRenters();
+
+    }
+
+
+    public List<RRenter> retrieveRenters(){
+        List<RRenter> renters = model.getRegistRenters();
+        return renters;
+    }
+    public List<Landlord> retrieveLandlords(){
+        List<Landlord> landlords = model.getLandlords();
+        return landlords;
+    }
+    public List<Property> retrieveProperties(){
+        List<Property> props = model.getProperties();
+        return props;
+    }
+
+    public boolean changeStatus(String id, String status) {
+        List<Property> properties = model.getProperties();
+        for (int i = 0; i < properties.size(); i++) {
+            if(id == properties.get(i).getIdProperty()) {
+                //NEED SETSTATUSSS
+                //property.get(i).setStatus(status);
+                new ManagerController(); //to refresh fetched database results
+            }
+            else {
+                return false; //displays error: incorrect propID
+            }
+        }
+        return true;
+    }
+
+}

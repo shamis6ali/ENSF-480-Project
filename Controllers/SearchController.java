@@ -1,4 +1,4 @@
-package Controller;
+package Controllers;
 
 
 import Model.ImportData;
@@ -33,7 +33,7 @@ public class SearchController {
         //bathrooms and bedrooms can not be <= 0, or empty
 
         for (int i = 0; i < properties.size(); i++) {
-            if (type==properties.get(i).getApartmentType() && furnished==properties.get(i).getFurnished() && )
+           // if (type==properties.get(i).getApartmentType() && furnished==properties.get(i).getFurnished() && )
         //to be completeed, but if all matchs, add to results list
         }
     }

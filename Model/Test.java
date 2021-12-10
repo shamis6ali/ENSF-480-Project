@@ -1,4 +1,5 @@
 package Model;
+import Controllers.*;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -55,7 +56,14 @@ public class Test {
        // Update.messageAdd("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", message);
         Update.messageRemove("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", "BlDy02", "BgTs02");
 
+            LoginController testLogin = new LoginController();
+            if(testLogin.rLogin("BgTs02","123456789")){
+               System.out.println("Successful login");
+            }else{
+                System.out.println("sadge");
+            }
 
+        System.out.println(testLogin.getUSER());
 
 //        properties = testData.getProperties();
 //        for(Property p : properties){

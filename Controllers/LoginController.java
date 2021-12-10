@@ -1,13 +1,13 @@
-package Controller;
+package Controllers;
 
 import Model.*;
 
 import java.util.List;
 
 public class LoginController {
-    String dbsUser = "root";
-    String dbsPass = "Hiba0105!";
-    String dbsPath = "jdbc:mysql://127.0.0.1:3306/Property_Rental";
+    String dbsUser = "tom";
+    String dbsPass = "password";
+    String dbsPath = "jdbc:mysql://127.0.0.1:3306/test";
 
     ImportData model = new ImportData(dbsPath,
             dbsUser,dbsPass);
@@ -20,7 +20,7 @@ public class LoginController {
     public boolean rLogin(String username, String password) { //might not even need to be static
         boolean valid = false;
         for (int i = 0; i < rentList.size(); i++) {
-            if (username == rentList.get(i).getUsername() && password == rentList.get(i).getPassword())
+            if (username.equals(rentList.get(i).getUsername()) && password.equals(rentList.get(i).getPassword()) )
                 valid = true;
         }
         if (valid) {
@@ -31,7 +31,9 @@ public class LoginController {
         }
         return valid;
     }
-
+    public String getUSER(){
+        return USER;
+    }
     public boolean mLogin(String username, String password) {
         List<Manager> mgrList = model.getManagers();
         boolean valid = false;

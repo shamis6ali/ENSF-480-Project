@@ -6,7 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="86caac59-86b6-45a6-8847-d0a7b3f34b9e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/LandlordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/LandlordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/RegisteredRenterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/RegisteredRenterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Search.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentalGUI/src/main/java/SummaryReportView.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentalGUI/src/main/java/SummaryReportView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ENSF-480-Project/Model/Test.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

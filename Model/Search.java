@@ -114,6 +114,31 @@ public class Search  {
         }
         return false;
 
+    }
+
+    public List<Property> returnSearchResults(String type, int furnished, int unfurnished, String quad, double bed, double bath ){
+        List<Property> temp = new ArrayList<>();
+        updateLists();
+        this.type = type;
+        this.bed = bed;
+        this.bath = bath;
+        this.furn = furnished;
+        this.unfurn = unfurnished;
+        this.quad = quad;
+
+        for(Property p : properties){
+            if(!p.getStatus().equals("Active")) continue;
+            else if(!p.getApartmentType().equals(type)  && !type.equals("any"))continue;//make preference isn't 'any if it doesn't match
+            else if(p.getNoOfBedrooms() != bed && bed != 0)continue;
+            else if(p.getNoOfBathrooms() != bath && bath != 0)continue;
+            else if (p.getFurnished() != furn && (unfurn == 0))continue;//make sure both furn and unfurn aren't 1
+            else if(p.getUnfurnished() != unfurn && (furn == 0))continue;
+            else if (!p.getCityQuadrant().equals(quad) && !quad.equals(("any")))continue;//same idea as checking 'type'
+            else temp.add(p);
+        }
+
+        if(temp.size() != 0) return temp;
+        else return null;
 
     }
 
@@ -122,4 +147,4 @@ public class Search  {
 
 
 
-}
+}//end of class
