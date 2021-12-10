@@ -36,13 +36,20 @@ public class Test {
         for(Property p : properties){
             System.out.println(p.getIdProperty());
         }
-        System.out.println("Before remove");
-        testData.removeEntity("property","idProperty","prp02");
-        System.out.println("After remove");
-        properties = testData.getProperties();
-        for(Property p : properties){
-            System.out.println(p.getIdProperty());
-        }
+        String newprop[] = {"aswe21", "BlDy02", "Mansion", "11", "7.5", "1", "0", "SW","Active","awesomewill 69"};
+        String str[]={"Rt7y48","Wilkson","Wkou45","somepass"};
+//        Update.propertyAdd("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", newprop);
+//        Update.landlordAdd("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", str);
+//        Update.propertyRemove("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", "aswe21");
+        String renter[] = {"123sdasd", "Sh ee", "User", "pass"};
+       // Update.renterAdd("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", renter);
+        String message[] = {"BlDy02", "BgTs02", "This is a test message"};
+       // Update.messageAdd("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", message);
+        Update.messageRemove("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", "BlDy02", "BgTs02");
+//        properties = testData.getProperties();
+//        for(Property p : properties){
+//            System.out.println(p.getIdProperty());
+//        }
 //        if(tempSearch.checkPropertyCriteria("Apartment", 2,1.5,0,1,"SE")){
 //            System.out.println("Property Found");
 //        }else{

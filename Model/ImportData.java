@@ -28,14 +28,18 @@ public class ImportData {
     }
 
     public List<Landlord> getLandlords() {
+        updateLists();
         return landlords;
     }
 
-    public List<RRenter> getRegistRenters() {
+    public List<RRenter> getRegistRenters()
+    {   updateLists();
         return registRenters;
     }
 
     public List<Manager> getManagers() {
+
+        updateLists();
         return managers;
     }
 
@@ -46,14 +50,17 @@ public class ImportData {
     }
 
     public List<SearchCriteria> getSearches() {
+        updateLists();
         return searches;
     }
 
     public List<Property_amount> getAmounts() {
+        updateLists();
         return amounts;
     }
 
     public List<Messages> getMessages() {
+        updateLists();
         return messages;
     }
 
