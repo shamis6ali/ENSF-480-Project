@@ -36,7 +36,7 @@ public class LoginController {
         List<Manager> mgrList = model.getManagers();
         boolean valid = false;
         for (int i = 0; i < mgrList.size(); i++) {
-            if (username == mgrList.get(i).getUsername() && password == mgrList.get(i).getPassword())
+            if (username.equals(mgrList.get(i).getUsername()) && password.equals(mgrList.get(i).getPassword()))
                 valid = true;
         }
         if (valid) {
@@ -52,7 +52,7 @@ public class LoginController {
         List<Landlord> landList = model.getLandlords();
         boolean valid = false;
         for (int i = 0; i < landList.size(); i++) {
-            if (username == landList.get(i).getUsername() && password == landList.get(i).getPassword())
+            if (username.equals(landList.get(i).getUsername()) && password.equals(landList.get(i).getPassword()))
                 valid = true;
         }
         if (valid) {
@@ -67,7 +67,7 @@ public class LoginController {
     public boolean rRegister(String name, String username, String password, String email) {
         boolean reg = true;
         for (int i = 0; i < rentList.size(); i++) {
-            if (username == rentList.get(i).getUsername()) {
+            if (username.equals(rentList.get(i).getUsername())) {
                 reg = false;
                 System.out.println("username already exists");
                 return reg;
@@ -82,7 +82,7 @@ public class LoginController {
     public boolean lRegister(String name, String username, String password) {
         boolean reg = true;
         for (int i = 0; i < landList.size(); i++) {
-            if (username == landList.get(i).getUsername()) {
+            if (username.equals(landList.get(i).getUsername())) {
                 reg = false;
                 System.out.println("username already exists");
                 return reg;

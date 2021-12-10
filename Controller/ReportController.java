@@ -9,3 +9,22 @@ public class ReportController {
     //have a counter for active houses
     //print rented houses --> landlord name, house ID, and address
 }
+
+public  class FeeController {
+    //replaceFee
+    //takes current fee and current period and replaces it with new fee and new period
+    //addFee
+    //adds a new fee and new period
+}
+
+public class RegisterPropertyController {
+    //takes all vrbls, including perhaps lanlord id/username input?
+    //adds it as an inactive listing
+
+    //makeActive:
+    //takes PropID and makes listing active once paid button is hit
+
+}
+
+
+
