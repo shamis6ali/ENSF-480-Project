@@ -63,7 +63,7 @@ public class LoginController {
         boolean reg = true;
         for (int i = 0; i < rentList.size(); i++) {
             if (username == rentList.get(i).getUsername()) {
-                valid = false;
+                reg = false;
                 System.out.println("username already exists");
                 return reg;
             }
@@ -78,7 +78,7 @@ public class LoginController {
         boolean reg = true;
         for (int i = 0; i < landList.size(); i++) {
             if (username == landList.get(i).getUsername()) {
-                valid = false;
+                reg = false;
                 System.out.println("username already exists");
                 return reg;
             }
