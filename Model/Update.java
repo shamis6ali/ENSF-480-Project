@@ -23,16 +23,14 @@ public class Update {
             String query = "INSERT INTO Landlord ("
                     + " idLandlord,"
                     + " Name,"
-                    + " Username,"
                     + " Password"
                     + " ) VALUES ("
-                    + "?, ?, ?, ?)";
-            System.out.println(query);
+                    + "?, ?, ?)";
+            //System.out.println(query);
             PreparedStatement myStmt = updt.connect.getDbConnect().prepareStatement(query);
             myStmt.setString(1,information[0]);
             myStmt.setString(2,information[1]);
             myStmt.setString(3,information[2]);
-            myStmt.setString(4,information[3]);
             //updt.connect.setResults(((java.sql.Statement) myStmt).executeUpdate(query));
             myStmt.executeUpdate();
             updt.connect.close();
@@ -71,12 +69,12 @@ public class Update {
             String query = "INSERT INTO rrenter ("
                     + " idRenter,"
                     + " Name,"
-                    + " Username,"
                     + " Password,"
-                    + "Subscribe"
+                    + "Subscribe,"
+                    + "Email"
                     + " ) VALUES ("
-                    + "?, ?, ?, ?, 0)";
-            System.out.println(query);
+                    + "?, ?, ?, 0, ?)";
+            //System.out.println(query);
             PreparedStatement myStmt = updt.connect.getDbConnect().prepareStatement(query);
             myStmt.setString(1,information[0]);
             myStmt.setString(2,information[1]);
@@ -124,11 +122,11 @@ public class Update {
                     + " Furnished,"
                     + " Unfurnished,"
                     + " City_quadrant,"
-                    + " Status,"
+                    + " StatusP,"
                     + " Address"
                     + " ) VALUES ("
                     + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            System.out.println(query);
+            //System.out.println(query);
             PreparedStatement myStmt = updt.connect.getDbConnect().prepareStatement(query);
             myStmt.setString(1,information[0]);
             myStmt.setString(2,information[1]);
@@ -180,8 +178,8 @@ public class Update {
                     + " Username,"
                     + " Password,"
                     + " ) VALUES ("
-                    + "?, ?, ?, ?,)";
-            System.out.println(query);
+                    + "?, ?, ?, ?)";
+            //System.out.println(query);
             PreparedStatement myStmt = updt.connect.getDbConnect().prepareStatement(query);
             myStmt.setString(1,information[0]);
             myStmt.setString(2,information[1]);
@@ -226,7 +224,7 @@ public class Update {
                     + " Message"
                     + " ) VALUES ("
                     + "?, ?, ? )";
-            System.out.println(query);
+            //System.out.println(query);
             PreparedStatement myStmt = updt.connect.getDbConnect().prepareStatement(query);
             myStmt.setString(1,information[0]);
             myStmt.setString(2,information[1]);
@@ -271,7 +269,7 @@ public class Update {
                     + " Period"
                     + " ) VALUES ("
                     + "?, ?, ?, )";
-            System.out.println(query);
+            //System.out.println(query);
             PreparedStatement myStmt = updt.connect.getDbConnect().prepareStatement(query);
             myStmt.setString(1,information[0]);
             myStmt.setString(2,information[1]);
@@ -308,6 +306,23 @@ public class Update {
 
     }
 
+    public static void setStatus(String url,String username,String password,String idProperty,String status) throws SQLException{
+        Update updt = new Update(url,username,password);
+        try{
+            String query = "UPDATE Property SET StatusP= ? WHERE idProperty= ?";
+            PreparedStatement mystmt = updt.connect.getDbConnect().prepareStatement(query);
+            mystmt.setString(1, status);
+            mystmt.setString(2, idProperty);
+            mystmt.executeUpdate();
+            updt.connect.close();
+
+        }catch (SQLException e){
+            updt.connect.close();
+            e.printStackTrace();
+        }
+
+    }
+
     public static void searchAdd(String url,String username,String password,String [] information) throws SQLException{
         Update updt = new Update(url,username,password);
         try{
@@ -322,7 +337,7 @@ public class Update {
                     + " idRenter"
                     + " ) VALUES ("
                     + "?, ?, ?, ?, ?, ?, ?, ?)";
-            System.out.println(query);
+            //System.out.println(query);
             PreparedStatement myStmt = updt.connect.getDbConnect().prepareStatement(query);
             myStmt.setString(1,information[0]);
             myStmt.setString(2,information[1]);
@@ -341,6 +356,38 @@ public class Update {
             updt.connect.close();
             ex.printStackTrace();
         }
+    }
+
+    public static void setSubscribeOn(String url, String username, String password, String ID) throws SQLException{
+        Update updt = new Update(url, username, password);
+        try{
+            String query = "UPDATE RRenter SET Subscribe = 1 WHERE idRenter = ?";
+            PreparedStatement mystmt = updt.connect.getDbConnect().prepareStatement(query);
+            mystmt.setString(1, ID);
+            mystmt.executeUpdate();
+            updt.connect.close();
+
+        }catch (SQLException e){
+            updt.connect.close();
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void setSubscribeOff(String url, String username, String password, String ID) throws SQLException{
+        Update updt = new Update(url, username, password);
+        try{
+            String query = "UPDATE RRenter SET Subscribe = 0 WHERE idRenter = ?";
+            PreparedStatement mystmt = updt.connect.getDbConnect().prepareStatement(query);
+            mystmt.setString(1, ID);
+            mystmt.executeUpdate();
+            updt.connect.close();
+
+        }catch (SQLException e){
+            updt.connect.close();
+            e.printStackTrace();
+        }
+
     }
 
     public static void searchRemove(String url, String username, String password, String ID) throws SQLException{
