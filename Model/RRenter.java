@@ -34,12 +34,18 @@ public class RRenter implements SearchEnable, Observer {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     public void update() {
     System.out.println("check");
     }
 
 
+=======
+    public int getSubscribe() {
+        return subscribe;
+    }
+>>>>>>> main
 =======
     public int getSubscribe() {
         return subscribe;
