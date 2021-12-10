@@ -31,4 +31,8 @@ public class RRenter implements SearchEnable {
     public String getPassword() {
         return password;
     }
+
+    public int getSubscribe() {
+        return subscribe;
+    }
 }

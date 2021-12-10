@@ -37,7 +37,7 @@ CREATE TABLE `Landlord` (
 
 LOCK TABLES `Landlord` WRITE;
 /*!40000 ALTER TABLE `Landlord` DISABLE KEYS */;
-INSERT INTO `Landlord` VALUES ('BlDy02','Bill Dipperly','awesomeman71','dipperlyMAN2'),('MxBy01','Max Bay','MaxBayMaster3131','Supersecretpassword'),('SeTx03','Shingle Trax','TraxSaintsuper','TRAX!!pss'),('TmAe04','Tom Awesome','TomUsername','TGisnottheway1725'),('TyLJs05','Tray L Jonas','Ljones','kgosnmelsd');
+INSERT INTO `Landlord` VALUES ('BlDy02','Bill Dipperly','awesomeman71','dipperlyMAN2'),('MxBy01','Max Bay','MaxBayMaster3131','Supersecretpassword'),('Rt7y48','Wilkson','Wkou45','somepass'),('SeTx03','Shingle Trax','TraxSaintsuper','TRAX!!pss'),('TmAe04','Tom Awesome','TomUsername','TGisnottheway1725'),('TyLJs05','Tray L Jonas','Ljones','kgosnmelsd');
 /*!40000 ALTER TABLE `Landlord` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,6 +112,9 @@ CREATE TABLE `Property` (
   `City_quadrant` varchar(10) DEFAULT NULL,
   `Status` varchar(15) NOT NULL,
   `Address` varchar(150) NOT NULL,
+  `Day` int DEFAULT NULL,
+  `Month` int DEFAULT NULL,
+  `Year` int DEFAULT NULL,
   PRIMARY KEY (`idProperty`),
   KEY `fk_landlord_id_idx` (`Landlord_id`),
   CONSTRAINT `fk_landlord_id` FOREIGN KEY (`Landlord_id`) REFERENCES `Landlord` (`idLandlord`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -124,7 +127,7 @@ CREATE TABLE `Property` (
 
 LOCK TABLES `Property` WRITE;
 /*!40000 ALTER TABLE `Property` DISABLE KEYS */;
-INSERT INTO `Property` VALUES ('pqro05','BlDy02','Unattached House',3,3,1,0,'SW','Rented','3723 Ganges Road'),('pqro08','SeTx03','Apartment',1,1,0,1,'SW','Active','5786 Glenna Tunnel Apt. 279'),('prop01','MxBy01','Apartment',2,1.5,0,1,'SE','Active','2381 Milton Corner Suite 396'),('prop06','SeTx03','Apartment',4,3,0,1,'SE','Rented','850 Mayer Park Apt. 340'),('prop07','SeTx03','Bungalow',3,3,1,0,'NW','Active','4655 Craven Place '),('prop10','TyLJs05','Unattached House',10,7.5,1,0,'SW','Active','412 Rich Grove Street'),('prop11','TyLJs05','Apartment',3,3.5,1,0,'NE','Active','137 Murphy Streets Apt. 977'),('prp02','MxBy01','Attached House',4,2,1,0,'NW','Active','2388 Tchesinkut Lake Rd'),('prpoq03','MxBy01','Townhouse',2,2.5,1,0,'SW','Active','765 Heritage Drive'),('prpoq09','TmAe04','Townhouse',2,2.5,1,0,'SW','Cancelled','1337 Awesome Street'),('prq04','BlDy02','Attached House',1,1,0,1,'NE','Active','1239 Bank St');
+INSERT INTO `Property` VALUES ('pqro05','BlDy02','Unattached House',3,3,1,0,'SW','Rented','3723 Ganges Road',5,12,2021),('pqro08','SeTx03','Apartment',1,1,0,1,'SW','Active','5786 Glenna Tunnel Apt. 279',25,11,2020),('prop01','MxBy01','Apartment',2,1.5,0,1,'SE','Active','2381 Milton Corner Suite 396',24,5,2020),('prop06','SeTx03','Apartment',4,3,0,1,'SE','Rented','850 Mayer Park Apt. 340',27,5,2019),('prop07','SeTx03','Bungalow',3,3,1,0,'NW','Active','4655 Craven Place ',19,4,2019),('prop10','TyLJs05','Unattached House',10,7.5,1,0,'SW','Active','412 Rich Grove Street',15,3,2021),('prop11','TyLJs05','Apartment',3,3.5,1,0,'NE','Active','137 Murphy Streets Apt. 977',4,8,2020),('prp02','MxBy01','Attached House',4,2,1,0,'NW','Active','2388 Tchesinkut Lake Rd',8,7,2021),('prpoq03','MxBy01','Townhouse',2,2.5,1,0,'SW','Active','765 Heritage Drive',6,9,2020),('prpoq09','TmAe04','Townhouse',2,2.5,1,0,'SW','Cancelled','1337 Awesome Street',9,9,2020),('prq04','BlDy02','Attached House',1,1,0,1,'NE','Active','1239 Bank St',7,5,2019);
 /*!40000 ALTER TABLE `Property` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -224,4 +227,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-08 22:51:12
+-- Dump completed on 2021-12-09 22:27:54
