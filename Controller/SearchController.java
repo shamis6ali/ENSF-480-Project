@@ -1,10 +1,13 @@
 package Controller;
 
 
-import Model.ImportData;
-import Model.Property;
+import Model.*;
 
+import java.sql.SQLException;
 import java.util.List;
+import java.util.*;
+
+import static Controller.LoginController.USER;
 
 public class SearchController {
     String dbsUser = "root";
@@ -13,32 +16,77 @@ public class SearchController {
     ImportData model = new ImportData(dbsPath,
             dbsUser,dbsPass);
     String type;
-    String furnished;
+    int furnished;
+    int unfurnished;
+    String furn;
+    String unfurn;
     String quadrant;
-    int bedrooms;
-    int bathrooms;
-    public SearchController(String type, String furnished, String quadrant, int bedrooms, int bathrooms) {
+    double bedrooms;
+    double bathrooms;
+    String beds;
+    String baths;
+    String searchID = "";
+    List<Property> results;
+    public SearchController(String type, int furnished, String quadrant, double bedrooms, double bathrooms) {
         this.type = type;
         this.furnished = furnished;
         this.quadrant = quadrant;
         this.bedrooms = bedrooms;
         this.bathrooms = bathrooms;
-        search(type, furnished, quadrant, bedrooms, bathrooms);
+        if (furnished == 1)
+            unfurnished = 0;
+        else
+            unfurnished = 1;
+        furn = Integer.toString(furnished);
+        unfurn = Integer.toString();
+        beds = bedrooms.toString();
+        baths = bathrooms.toString();
+        search();
     }
 
-    //need to change return type and everything laterrr, also make adjustments for an "any" option
-    public void search(String type, String furnished, String quadrant, int bedrooms, int bathrooms) {
-        List<Property> properties = model.getProperties();
-        //List results
-        //bathrooms and bedrooms can not be <= 0, or empty
+    public List<Property> search() {
+        if (bedrooms <= 0 || bathrooms <= 0 ) {
+            return;
+        }
+        results = model.returnSearchResults(type, furnished, unfurnished, quadrant, bedrooms, bathrooms);
+        return results;
+    }
 
-        for (int i = 0; i < properties.size(); i++) {
-            if (type==properties.get(i).getApartmentType() && furnished==properties.get(i).getFurnished() && )
-        //to be completeed, but if all matchs, add to results list
+    public void registeredSearch() throws SQLException {
+        //if subscribe = 1, then save this info in the searchCrit table!
+        List<RRenter> rentList = model.getRegistRenters();
+        List<SearchCriteria> savedSearches = model.getSearches();
+        for (int i = 0; i < rentList.size(); i++) {
+            if (USER.equals(rentList.get(i).getUsername()) && rentList.get(i).getSubscribe() == 1) {
+                for (int j = 0; j < savedSearches.size(); j++) {
+                    if (USER.equals(savedSearches.get(j).getIdRenter())) {
+                        Update.searchRemove(dbsPath, dbsUser,dbsPass, USER);
+                        System.out.println("old criteria deleted");
+                        String added[] = {searchID, type, beds, baths, furn, unfurn, quadrant, USER};
+                        Update.searchAdd(dbsPath, dbsUser,dbsPass, added);
+                        System.out.println("criteria replaced");
+                    } else {
+                        String newadded[] = {searchID, type, beds, baths, furn, unfurn, quadrant, USER};
+                        Update.searchAdd(dbsPath, dbsUser,dbsPass, newadded);
+                        System.out.println("brand new criteria added");
+
+                    }
+                }
+            }
+            System.out.println("user not subscribed");
+
         }
     }
 
-    public void registeredSearch() {
-        //if subscribe = 1, then save this info in the searchCrit table!
+    public void subscribe() throws SQLException{
+       Update.setSubscribeOn(dbsPath, dbsUser, dbsPath, USER);
+        System.out.println("Subscribed!");
+
+    }
+
+    public void unsubscribe() throws  SQLException {
+        Update.setSubscribeOff(dbsPath, dbsUser, dbsPath, USER);
+        System.out.println("Unsubscribed!");
+
     }
 }
