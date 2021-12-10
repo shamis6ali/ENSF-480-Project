@@ -20,7 +20,7 @@ public class LoginController {
         List<RegisteredRenter> rentList = model.getRegisteredRenters();
         boolean valid = false;
         for (int i = 0; i < rentList.size(); i++) {
-            if (username == rentlist.get(i).getUsername() && password == rentList.get(i).getPassword())
+            if (username == rentList.get(i).getUsername() && password == rentList.get(i).getPassword())
                 valid = true;
         }
         if (valid) {
