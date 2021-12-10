@@ -11,12 +11,15 @@ public class Property {
     private String cityQuadrant;
     private String status;
     private String address;
+    private int day;
+    private int month;
+    private int year;
 
     public Property(String idProperty, String landlordId,
                     String apartmentType, double noOfBedrooms,
                     double noOfBathrooms, int furnished,
                     int unfurnished, String cityQuadrant,
-                    String status, String address) {
+                    String status, String address, int day, int month, int year) {
         this.idProperty = idProperty;
         this.landlordId = landlordId;
         this.apartmentType = apartmentType;
@@ -27,6 +30,9 @@ public class Property {
         this.cityQuadrant = cityQuadrant;
         this.status = status;
         this.address = address;
+        this.day=day;
+        this.month=month;
+        this.year=year;
     }
 
     public String getIdProperty() {
@@ -67,5 +73,17 @@ public class Property {
 
     public String getAddress() {
         return address;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public int getYear() {
+        return year;
     }
 }

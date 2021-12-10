@@ -9,13 +9,21 @@ public class Test {
         ImportData testData =  new ImportData("jdbc:mysql://127.0.0.1:3306/test",
                 "tom","password");
 
-        List<Landlord> landList = testData.getLandlords();
+//        List<Landlord> landList = testData.getLandlords();
+//
+//        for(int i=0;i<landList.size();i++){
+//            System.out.println(landList.get(i).getIdLandlord()+" "+landList.get(i).getName()+" "+
+//                    landList.get(i).getUsername()+" "+landList.get(i).getPassword());
+//            System.out.println();
+//        }
 
-        for(int i=0;i<landList.size();i++){
-            System.out.println(landList.get(i).getIdLandlord()+" "+landList.get(i).getName()+" "+
-                    landList.get(i).getUsername()+" "+landList.get(i).getPassword());
-            System.out.println();
-        }
+        // BELOW IS SHOWN HOW YOU USE setStatus METHOD FOR PROPERTIES
+
+        //Update.setStatus("jdbc:mysql://127.0.0.1:3306/Online_Rental","root","root","prop06","Cancelled");
+
+        // BELOW IS SHOWN HOW YOU USE setSubscribeOn METHOD FOR PROPERTIES SAME IS HOW YOU USE setSubscribeOff
+
+        //Update.setSubscribeOn("jdbc:mysql://127.0.0.1:3306/Online_Rental","root","root","NiTSs05");
 
 //        List<SearchCriteria> search = testData.getSearches();
 //
@@ -46,6 +54,9 @@ public class Test {
         String message[] = {"BlDy02", "BgTs02", "This is a test message"};
        // Update.messageAdd("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", message);
         Update.messageRemove("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", "BlDy02", "BgTs02");
+
+
+
 //        properties = testData.getProperties();
 //        for(Property p : properties){
 //            System.out.println(p.getIdProperty());
