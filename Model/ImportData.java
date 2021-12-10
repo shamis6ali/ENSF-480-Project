@@ -75,26 +75,26 @@ public class ImportData {
     }
 
     private void landlordFill(Connecting connection) {
-        // try to make a connection and exclusively fill the manufacturer list from
-        // inventory.sql
+        // try to make a connection and exclusively fill the Landlord list from
+        // SQL File.sql
         try {
             // initialize arraylist
             this.landlords = new ArrayList<>();
-            // get all the records from manufacturer table
+            // get all the records from Landlord table
             Statement myStmt = connection.getDbConnect().createStatement();
             String query = "SELECT * FROM " + "Landlord";
-            String[] landlordsS = new String[4];
-            String[] columns = { "idLandlord", "Name", "Username", "Password" };
+            String[] landlordsS = new String[3];
+            String[] columns = { "idLandlord", "Name", "Password" };
 
-            connection.setResults(((java.sql.Statement) myStmt).executeQuery(query));
+            connection.setResults(((Statement) myStmt).executeQuery(query));
 
-            // after getting all the records from the inventory.sql database store in array
+            // after getting all the records from the SQL File.sql database store in array
             // list
             while (connection.getResults().next()) {
                 for (int i = 0; i < columns.length; i++) {
                     landlordsS[i] = connection.getResults().getString(columns[i]);
                 }
-                this.landlords.add(new Landlord(landlordsS[0], landlordsS[1], landlordsS[2], landlordsS[3]));
+                this.landlords.add(new Landlord(landlordsS[0], landlordsS[1], landlordsS[2]));
             }
         } catch (SQLException ex) {
             // if a sql exception occurs print stack of errors
@@ -103,27 +103,27 @@ public class ImportData {
     }
 
     private void rentersFill(Connecting connection) {
-        // try to make a connection and exclusively fill the manufacturer list from
-        // inventory.sql
+        // try to make a connection and exclusively fill the RRenter list from
+        // SQL File.sql
         try {
             // initialize arraylist
             this.registRenters = new ArrayList<>();
-            // get all the records from manufacturer table
+            // get all the records from RRenter table
             Statement myStmt = (Statement) connection.getDbConnect().createStatement();
             String query = "SELECT * FROM " + "RRenter";
             String[] registRenterS = new String[5];
-            String[] columns = { "idRenter", "Name", "Username", "Password","Subscribe" };
+            String[] columns = { "idRenter", "Name", "Password","Subscribe","Email" };
 
-            connection.setResults(((java.sql.Statement) myStmt).executeQuery(query));
+            connection.setResults(((Statement) myStmt).executeQuery(query));
 
-            // after getting all the records from the inventory.sql database store in array
+            // after getting all the records from the SQL File.sql database store in array
             // list
             while (connection.getResults().next()) {
                 for (int i = 0; i < columns.length; i++) {
                     registRenterS[i] = connection.getResults().getString(columns[i]);
                 }
-                this.registRenters.add(new RRenter(registRenterS[0],registRenterS[1],registRenterS[2], registRenterS[3],
-                        Integer.parseInt(registRenterS[4])));
+                this.registRenters.add(new RRenter(registRenterS[0],registRenterS[1],
+                        registRenterS[2],Integer.parseInt(registRenterS[3]),registRenterS[4]));
             }
         } catch (SQLException ex) {
             // if a sql exception occurs print stack of errors
@@ -132,20 +132,20 @@ public class ImportData {
     }
 
     private void managersFill(Connecting connection) {
-        // try to make a connection and exclusively fill the manufacturer list from
-        // inventory.sql
+        // try to make a connection and exclusively fill the Manager list from
+        // SQL File.sql
         try {
             // initialize arraylist
             this.managers = new ArrayList<>();
-            // get all the records from manufacturer table
+            // get all the records from Manager table
             Statement myStmt = (Statement) connection.getDbConnect().createStatement();
             String query = "SELECT * FROM " + "Manager";
             String[] managerS = new String[4];
             String[] columns = { "idManager", "Name", "Username", "Password" };
 
-            connection.setResults(((java.sql.Statement) myStmt).executeQuery(query));
+            connection.setResults(((Statement) myStmt).executeQuery(query));
 
-            // after getting all the records from the inventory.sql database store in array
+            // after getting all the records from the SQL File.sql database store in array
             // list
             while (connection.getResults().next()) {
                 for (int i = 0; i < columns.length; i++) {
@@ -160,21 +160,21 @@ public class ImportData {
     }
 
     private void propertyFill(Connecting connection) {
-        // try to make a connection and exclusively fill the manufacturer list from
-        // inventory.sql
+        // try to make a connection and exclusively fill the Property list from
+        // SQL File.sql
         try {
             // initialize arraylist
             this.properties = new ArrayList<>();
-            // get all the records from manufacturer table
+            // get all the records from Property table
             Statement myStmt = (Statement) connection.getDbConnect().createStatement();
             String query = "SELECT * FROM " + "Property";
             String[] propertyS = new String[13];
             String[] columns = { "idProperty", "Landlord_id", "Apartment_type", "No_of_bedrooms","No_of_bathrooms",
-                    "Furnished","Unfurnished","City_quadrant","Status","Address","Day","Month","Year" };
+                    "Furnished","Unfurnished","City_quadrant","StatusP","Address","Day","Month","Year" };
 
-            connection.setResults(((java.sql.Statement) myStmt).executeQuery(query));
+            connection.setResults(((Statement) myStmt).executeQuery(query));
 
-            // after getting all the records from the inventory.sql database store in array
+            // after getting all the records from the SQL File.sql database store in array
             // list
             while (connection.getResults().next()) {
                 for (int i = 0; i < columns.length; i++) {
@@ -192,8 +192,8 @@ public class ImportData {
     }
 
     private void searchFill(Connecting connection) {
-        // try to make a connection and exclusively fill the manufacturer list from
-        // inventory.sql
+        // try to make a connection and exclusively fill the Search_Criteria list from
+        // SQL File.sql
         try {
             // initialize arraylist
             this.searches = new ArrayList<>();
@@ -203,9 +203,9 @@ public class ImportData {
             String[] searchS = new String[8];
             String[] columns = { "idSearch", "Apartment_type", "No_of_bedrooms","No_of_bathrooms","Furnished","Unfurnished","City_quadrant","idRenter" };
 
-            connection.setResults(((java.sql.Statement) myStmt).executeQuery(query));
+            connection.setResults(((Statement) myStmt).executeQuery(query));
 
-            // after getting all the records from the inventory.sql database store in array
+            // after getting all the records from the SQL File.sql database store in array
             // list
             while (connection.getResults().next()) {
                 for (int i = 0; i < columns.length; i++) {
@@ -221,20 +221,20 @@ public class ImportData {
     }
 
     private void amountFill(Connecting connection) {
-        // try to make a connection and exclusively fill the manufacturer list from
-        // inventory.sql
+        // try to make a connection and exclusively fill the Property_amount list from
+        // SQL File.sql
         try {
             // initialize arraylist
             this.amounts = new ArrayList<>();
-            // get all the records from manufacturer table
+            // get all the records from Property_amount table
             Statement myStmt = (Statement) connection.getDbConnect().createStatement();
             String query = "SELECT * FROM " + "Property_amount";
             String[] amountS = new String[4];
             String[] columns = { "Propertyid", "Landlord_id", "Amount","Period"};
 
-            connection.setResults(((java.sql.Statement) myStmt).executeQuery(query));
+            connection.setResults(((Statement) myStmt).executeQuery(query));
 
-            // after getting all the records from the inventory.sql database store in array
+            // after getting all the records from the SQL File.sql database store in array
             // list
             while (connection.getResults().next()) {
                 for (int i = 0; i < columns.length; i++) {
@@ -249,20 +249,20 @@ public class ImportData {
     }
 
     private void messagesFill(Connecting connection) {
-        // try to make a connection and exclusively fill the manufacturer list from
-        // inventory.sql
+        // try to make a connection and exclusively fill the Messages list from
+        // SQL File.sql
         try {
             // initialize arraylist
             this.messages = new ArrayList<>();
-            // get all the records from manufacturer table
+            // get all the records from Messages table
             Statement myStmt = (Statement) connection.getDbConnect().createStatement();
             String query = "SELECT * FROM " + "Messages";
             String[] messageS = new String[3];
             String[] columns = { "Landlord_id", "Renter_id", "Message"};
 
-            connection.setResults(((java.sql.Statement) myStmt).executeQuery(query));
+            connection.setResults(((Statement) myStmt).executeQuery(query));
 
-            // after getting all the records from the inventory.sql database store in array
+            // after getting all the records from the SQL File.sql database store in array
             // list
             while (connection.getResults().next()) {
                 for (int i = 0; i < columns.length; i++) {
@@ -300,7 +300,7 @@ public class ImportData {
 //    }
 
     public void fillArrays(Connecting connection) {
-        // upon call fills all the arraylists, one for each table in inventory.sql
+        // upon call fills all the arraylists, one for each table in SQL File.sql
         // database
         this.landlordFill(connection);
         this.managersFill(connection);
