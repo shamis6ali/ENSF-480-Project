@@ -12,6 +12,8 @@ public class LoginController {
     ImportData model = new ImportData(dbsPath,
             dbsUser,dbsPass);
 
+    public static String USER;
+
     public List<RRenter> rentList = model.getRegistRenters();
     public List<Landlord> landList = model.getLandlords();
 
@@ -22,6 +24,7 @@ public class LoginController {
                 valid = true;
         }
         if (valid) {
+            this.USER = username;
             System.out.println("valid renter");
         } else {
             System.out.println("invalid renter");
@@ -37,6 +40,7 @@ public class LoginController {
                 valid = true;
         }
         if (valid) {
+            this.USER = username;
             System.out.println("valid manager");
         } else {
             System.out.println("invalid manager");
@@ -52,6 +56,7 @@ public class LoginController {
                 valid = true;
         }
         if (valid) {
+            this.USER = username;
             System.out.println("valid landlord");
         } else {
             System.out.println("invalid landlord");
@@ -69,7 +74,7 @@ public class LoginController {
             }
         }
         String renter[] = {name, username, password, email};
-        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", renter);
+//        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", renter);
         System.out.println("registered!");
         return reg;
     }
@@ -84,10 +89,9 @@ public class LoginController {
             }
         }
         String landlord[] = {name, username, password};
-        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", landlord);
+//        Update.landlordAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", landlord);
         System.out.println("registered!");
         return reg;
     }
-    
 
 }

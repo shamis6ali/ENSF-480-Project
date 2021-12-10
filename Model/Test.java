@@ -17,7 +17,7 @@ public class Test {
 //            System.out.println();
 //        }
 
-        // BELOW IS SHOWN HOW YOU USE setStatus METHOD FOR PROPERTIES
+         // BELOW IS SHOWN HOW YOU USE setStatus METHOD FOR PROPERTIES
 
         //Update.setStatus("jdbc:mysql://127.0.0.1:3306/Online_Rental","root","root","prop06","Cancelled");
 
