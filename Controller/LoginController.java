@@ -2,6 +2,7 @@ package Controller;
 
 import Model.*;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class LoginController {
@@ -17,6 +18,9 @@ public class LoginController {
     public List<RRenter> rentList = model.getRegistRenters();
     public List<Landlord> landList = model.getLandlords();
 
+    public String getUSER(){
+        return USER;
+    }
     public boolean rLogin(String username, String password) { //might not even need to be static
         boolean valid = false;
         for (int i = 0; i < rentList.size(); i++) {
@@ -64,7 +68,7 @@ public class LoginController {
         return valid;
     }
 
-    public boolean rRegister(String name, String username, String password, String email) {
+    public boolean rRegister(String name, String username, String password, String email) throws SQLException {
         boolean reg = true;
         for (int i = 0; i < rentList.size(); i++) {
             if (username.equals(rentList.get(i).getUsername())) {
@@ -79,7 +83,7 @@ public class LoginController {
         return reg;
     }
 
-    public boolean lRegister(String name, String username, String password) {
+    public boolean lRegister(String name, String username, String password) throws SQLException {
         boolean reg = true;
         for (int i = 0; i < landList.size(); i++) {
             if (username.equals(landList.get(i).getUsername())) {

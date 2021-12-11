@@ -24,10 +24,10 @@ public class Search  {
         datab = d;
     }
 
-    /*
+    /**
      *  The function will iterate the properties and check for matching search criteria
      *  @param idRenter  to check which search criteria the renter associates with
-     *  @return returns a list of property id strings that matches the search criteria
+     *  @return  a list of property id strings that matches the search criteria
      *          returns null otherwise
      *
      */
@@ -66,7 +66,8 @@ public class Search  {
 
     }
 
-    /*This function will check if a property exists based on property criteria
+    /**
+        This function will check if a property exists based on property criteria
     * All the param will be the search criteria for a property
     * @return true if property with given criteria exists, false otherwise
      */
@@ -96,7 +97,13 @@ public class Search  {
     return false;
     }
 
-    public boolean checkPropertySearchCriteria(SearchCriteria s){//hmmm gotta check
+    /**
+     *
+     * @param s
+     * @return returns true if search criteria s matches any properties in the database
+     * false otherwise
+     */
+    public boolean checkPropertySearchCriteria(SearchCriteria s){
         updateLists();
         this.type = s.getApartmentType();
         this.bed = s.getNoOfBedrooms();
@@ -119,6 +126,16 @@ public class Search  {
 
     }
 
+    /**
+     *
+     * @param type
+     * @param furnished
+     * @param unfurnished
+     * @param quad
+     * @param bed
+     * @param bath
+     * @return returns a list of property that matches all the arguments
+     */
     public List<Property> returnSearchResults(String type, int furnished, int unfurnished, String quad, double bed, double bath ){
         List<Property> temp = new ArrayList<>();
         updateLists();
@@ -144,7 +161,12 @@ public class Search  {
         else return null;
 
     }
-        //Return list of emails that has matching criteria of pr
+
+    /**
+     *
+     * @param pr An array of strings that constructs a property in the database
+     * @return Will return emails of all users that has the matching search criteria of the property
+     */
     public  List<String> checkNewPropertyFromSearchCriteria(String[] pr){
         List<String> temp = new ArrayList<>();
         this.type = pr[0];
