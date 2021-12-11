@@ -41,7 +41,6 @@ public class SearchController {
         unfurn = Integer.toString();
         beds = bedrooms.toString();
         baths = bathrooms.toString();
-        search();
     }
 
     public List<Property> search() {
