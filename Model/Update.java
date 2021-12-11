@@ -5,10 +5,22 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Update {
+
+    /**
+     * The below variables are to make a connection with database
+     */
+
     private Connecting connect;
     private String DBURL;
     private String USERNAME;
     private String PASSWORD;
+
+    /**
+     * Constructor for Update
+     * @param url
+     * @param username
+     * @param password
+     */
 
     private Update(String url,String username,String password){
         this.DBURL=url;
@@ -16,6 +28,15 @@ public class Update {
         this.PASSWORD=password;
         connect = new Connecting(DBURL,USERNAME,PASSWORD);
     }
+
+    /**
+     * This method adds landlords to the landlord table in the database
+     * @param url
+     * @param username
+     * @param password
+     * @param information
+     * @throws SQLException
+     */
 
     public static void landlordAdd(String url,String username,String password,String [] information) throws SQLException {
         Update updt = new Update(url,username,password);
@@ -42,6 +63,15 @@ public class Update {
 
     }
 
+    /**
+     * This method removes landlords from the landlord table in the database
+     * @param url
+     * @param username
+     * @param password
+     * @param ID
+     * @throws SQLException
+     */
+
 
     public static void landlordRemove(String url, String username, String password, String  ID) throws SQLException{
     Update updt = new Update(url, username, password);
@@ -62,6 +92,15 @@ public class Update {
     }
 
     }
+
+    /**
+     * It adds renter information in the database
+     * @param url
+     * @param username
+     * @param password
+     * @param information
+     * @throws SQLException
+     */
 
     public static void renterAdd(String url,String username,String password,String [] information) throws SQLException{
         Update updt = new Update(url,username,password);
@@ -89,6 +128,16 @@ public class Update {
             ex.printStackTrace();
         }
     }
+
+    /**
+     * This method removes renters from the renters table in the database
+     * @param url
+     * @param username
+     * @param password
+     * @param ID
+     * @throws SQLException
+     */
+
 
     public static void renterRemove(String url, String username, String password, String  ID) throws SQLException{
         Update updt = new Update(url, username, password);
@@ -258,18 +307,13 @@ public class Update {
         }
 
     }
-    public static void propertyAmountAdd(String url,String username,String password,String period,double amount){
+    public static void propertyAmountAdd(String url,String username,String password,double amount){
         Update updt = new Update(url,username,password);
         try{
-            String query = "INSERT INTO property_amount ("
-                    + " Amount,"
-                    + " Period"
-                    + " ) VALUES ("
-                    + "?, ?)";
+            String query = "UPDATE Property_amount SET Amount= ?";
             //System.out.println(query);
             PreparedStatement myStmt = updt.connect.getDbConnect().prepareStatement(query);
             myStmt.setDouble(1,amount);
-            myStmt.setString(2,period);
             //updt.connect.setResults(((java.sql.Statement) myStmt).executeUpdate(query));
             myStmt.executeUpdate();
             updt.connect.close();
@@ -279,6 +323,29 @@ public class Update {
             ex.printStackTrace();
         }
     }
+
+    public static void propertyPeriodAdd(String url,String username,String password,String period){
+        Update updt = new Update(url,username,password);
+        try{
+            String query = "UPDATE Property_amount SET Period= ?";
+            //System.out.println(query);
+            PreparedStatement myStmt = updt.connect.getDbConnect().prepareStatement(query);
+            myStmt.setString(1,period);
+            //updt.connect.setResults(((java.sql.Statement) myStmt).executeUpdate(query));
+            myStmt.executeUpdate();
+            updt.connect.close();
+        }catch (SQLException ex) {
+            // if a sql exception occurs print stack of errors
+            updt.connect.close();
+            ex.printStackTrace();
+        }
+    }
+
+    public static void propertyAmountBoth(String url,String username,String password,String period,double amount){
+        propertyAmountAdd(url,username,password,amount);
+        propertyPeriodAdd(url,username,password,period);
+    }
+
 
     public static void propertyAmountRemove(String url, String username, String password, String  propID,String lordID) throws SQLException{
         Update updt = new Update(url, username, password);
