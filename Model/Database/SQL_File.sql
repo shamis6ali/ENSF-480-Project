@@ -147,6 +147,7 @@ CREATE TABLE `Property_amount` (
 
 LOCK TABLES `Property_amount` WRITE;
 /*!40000 ALTER TABLE `Property_amount` DISABLE KEYS */;
+INSERT INTO `Property_amount` VALUES (100,'100');
 /*!40000 ALTER TABLE `Property_amount` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,4 +219,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-10 20:26:56
+-- Dump completed on 2021-12-10 21:24:12
