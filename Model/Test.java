@@ -1,5 +1,5 @@
 package Model;
-import Controllers.*;
+import Controller.*;
 
 import java.sql.SQLException;
 import java.util.List;

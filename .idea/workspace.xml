@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86caac59-86b6-45a6-8847-d0a7b3f34b9e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Search.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,11 +42,11 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.tasesta">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="LandingGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RentalGUI.src.main.java.LandingGUI" />
       <module name="ENSF-480-Project" />
@@ -60,15 +60,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tasesta" type="Application" factoryName="Application">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Model.Test" />
-      <module name="ENSF-480-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="tasesta" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.tasesta" />
+      <item itemvalue="Application.LandingGUI" />
+      <item itemvalue="Application.Test" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.LandingGUI" />
       </list>
     </recent_temporary>
@@ -84,6 +104,7 @@
       <workItem from="1639089966674" duration="84000" />
       <workItem from="1639090074167" duration="230000" />
       <workItem from="1639090327113" duration="19914000" />
+      <workItem from="1639198093965" duration="106000" />
     </task>
     <servers />
   </component>
