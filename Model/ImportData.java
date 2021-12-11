@@ -213,8 +213,8 @@ public class ImportData {
             // get all the records from Property_amount table
             Statement myStmt = (Statement) connection.getDbConnect().createStatement();
             String query = "SELECT * FROM " + "Property_amount";
-            String[] amountS = new String[4];
-            String[] columns = { "Propertyid", "Landlord_id", "Amount","Period"};
+            String[] amountS = new String[2];
+            String[] columns = {"Amount","Period"};
 
             connection.setResults(((Statement) myStmt).executeQuery(query));
 
@@ -224,7 +224,7 @@ public class ImportData {
                 for (int i = 0; i < columns.length; i++) {
                     amountS[i] = connection.getResults().getString(columns[i]);
                 }
-                this.amounts.add(new Property_amount(amountS[0],amountS[1],Double.parseDouble(amountS[2]),amountS[3]));
+                this.amounts.add(new Property_amount(Double.parseDouble(amountS[0]),amountS[1]));
             }
         } catch (SQLException ex) {
             // if a sql exception occurs print stack of errors
