@@ -19,7 +19,7 @@ public class EmailController {
     String propID;
     String email;
     String message;
-
+    
     public EmailController(String propID, String email, String message) { //for renters
         this.propID = propID;
         this.email = email;
