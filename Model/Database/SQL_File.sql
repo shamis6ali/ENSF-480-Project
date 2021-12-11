@@ -136,14 +136,8 @@ DROP TABLE IF EXISTS `Property_amount`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Property_amount` (
-  `Propertyid` varchar(45) NOT NULL,
-  `Landlord_id` varchar(50) NOT NULL,
-  `Amount` double DEFAULT NULL,
-  `Period` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`Propertyid`,`Landlord_id`),
-  KEY `fk_Property_amount_2_idx` (`Landlord_id`),
-  CONSTRAINT `fk_Property_amount_1` FOREIGN KEY (`Propertyid`) REFERENCES `Property` (`idProperty`),
-  CONSTRAINT `fk_Property_amount_2` FOREIGN KEY (`Landlord_id`) REFERENCES `Landlord` (`idLandlord`) ON DELETE CASCADE ON UPDATE CASCADE
+  `Amount` double NOT NULL,
+  `Period` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -224,4 +218,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-10 20:04:40
+-- Dump completed on 2021-12-10 20:26:56

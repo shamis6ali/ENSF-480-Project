@@ -275,22 +275,18 @@ public class Update {
         }
 
     }
-    public static void propertyAmountAdd(String url,String username,String password,String [] information){
+    public static void propertyAmountAdd(String url,String username,String password,String period,double amount){
         Update updt = new Update(url,username,password);
         try{
             String query = "INSERT INTO property_amount ("
-                    + " Propertyid,"
-                    + " Landlord_id,"
                     + " Amount,"
                     + " Period"
                     + " ) VALUES ("
-                    + "?, ?, ?, )";
+                    + "?, ?)";
             //System.out.println(query);
             PreparedStatement myStmt = updt.connect.getDbConnect().prepareStatement(query);
-            myStmt.setString(1,information[0]);
-            myStmt.setString(2,information[1]);
-            myStmt.setDouble(3,Double.parseDouble(information[2]));
-            myStmt.setString(4,information[3]);
+            myStmt.setDouble(1,amount);
+            myStmt.setString(2,period);
             //updt.connect.setResults(((java.sql.Statement) myStmt).executeUpdate(query));
             myStmt.executeUpdate();
             updt.connect.close();
