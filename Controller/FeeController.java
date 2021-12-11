@@ -17,7 +17,7 @@ public class FeeController {
     public void changePeriod (String period){
         Update.setPropertyAmount(period);
     }
-    public void changeBoth (double amount, String fee) {
+    public void changeBoth (double amount, String period) {
         Update.setPropertyAmount(amount, period);
     }
 
