@@ -3,6 +3,8 @@ package Model;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Update {
     private Connecting connect;
@@ -143,8 +145,17 @@ public class Update {
             myStmt.executeUpdate();
             updt.connect.close();
 
-//            Search check
-//            if()
+            Search tempSearch = new Search();
+            List<String> rIDS = new ArrayList<>();
+            rIDS = tempSearch.checkNewPropertyFromSearchCriteria(information);
+            if(tempSearch.checkNewPropertyFromSearchCriteria(information) != null){
+                System.out.println("New property added that matches search criteria");
+                for(int i = 0; i < rIDS.size(); i ++){
+                   // Update.messageAdd(updt.DBURL, updt.USERNAME, updt.PASSWORD, information[0],rIDS.get(i), "New matching property has been listed!");
+                }
+            }
+
+
 
 
 

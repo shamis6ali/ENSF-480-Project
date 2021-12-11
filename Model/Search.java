@@ -7,16 +7,19 @@ public class Search  {
     private int furn;
     private int unfurn;
     private String quad;
-    private ImportData datab;
+    private static ImportData datab;
     private List<Property> properties;
     private List<SearchCriteria> criteria;
+    private List<RRenter> renters;
 
 
     public void updateLists(){
         //datab.update();
         properties = datab.getProperties();
         criteria = datab.getSearches();
+        renters = datab.getRegistRenters();
     }
+    public Search(){};
     public Search(ImportData d){
         datab = d;
     }
@@ -141,7 +144,31 @@ public class Search  {
         else return null;
 
     }
+        //Return list of emails that has matching criteria of pr
+    public  List<String> checkNewPropertyFromSearchCriteria(String[] pr){
+        List<String> temp = new ArrayList<>();
+        this.type = pr[0];
+        this.bed = Double.parseDouble(pr[1]);
+        this.bath = Double.parseDouble(pr[2]);
+        this.furn = Integer.parseInt(pr[3]);
+        this.unfurn = Integer.parseInt(pr[4]);
+        this.quad = pr[5];
+        updateLists();
+        for(SearchCriteria s : criteria){//iterate each property
 
+             if(!s.getApartmentType().equals(type)  && !type.equals("any"))continue;//make preference isn't 'any if it doesn't match
+            else if(s.getNoOfBedrooms() != bed && bed != 0)continue;
+            else if(s.getNoOfBathrooms() != bath && bath != 0)continue;
+            else if (s.getFurnished() != furn && (unfurn == 0))continue;//make sure both furn and unfurn aren't 1
+            else if(s.getUnfurnished() != unfurn && (furn == 0))continue;
+            else if (!s.getCityQuadrant().equals(quad) && !quad.equals(("any")))continue;//same idea as checking 'type'
+            else temp.add(renters.get(renters.indexOf(s.getIdRenter())).getEmail());
+        }
+
+        if(temp.size() != 0) return temp;
+        else return null;
+
+    }
 
 
 
