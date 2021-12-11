@@ -38,9 +38,9 @@ public class SearchController {
         else
             unfurnished = 1;
         furn = Integer.toString(furnished);
-        unfurn = Integer.toString();
-        beds = bedrooms.toString();
-        baths = bathrooms.toString();
+        unfurn = Integer.toString(unfurnished);
+        beds = Double.toString(bedrooms);
+        baths = Double.toString(bathrooms);
     }
 
     public List<Property> search() {
