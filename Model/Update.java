@@ -142,6 +142,12 @@ public class Update {
             //updt.connect.setResults(((java.sql.Statement) myStmt).executeUpdate(query));
             myStmt.executeUpdate();
             updt.connect.close();
+
+//            Search check
+//            if()
+
+
+
         }catch (SQLException ex) {
             // if a sql exception occurs print stack of errors
             updt.connect.close();
@@ -364,6 +370,23 @@ public class Update {
             String query = "UPDATE RRenter SET Subscribe = 1 WHERE idRenter = ?";
             PreparedStatement mystmt = updt.connect.getDbConnect().prepareStatement(query);
             mystmt.setString(1, ID);
+            mystmt.executeUpdate();
+            updt.connect.close();
+
+        }catch (SQLException e){
+            updt.connect.close();
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void setStatusProperty(String url, String username, String password, String ID, String status){
+        Update updt = new Update(url, username, password);
+        try{
+            String query = "UPDATE property SET StatusP = ? WHERE idProperty = ?";
+            PreparedStatement mystmt = updt.connect.getDbConnect().prepareStatement(query);
+            mystmt.setString(1, status);
+            mystmt.setString(2, ID);
             mystmt.executeUpdate();
             updt.connect.close();
 
