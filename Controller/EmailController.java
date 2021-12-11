@@ -26,8 +26,7 @@ public class EmailController {
         this.message=message;
     }
     public void send() {
-        String info[] = {propID, email, message};
-        Update.messageAdd(dbsPath, dbsUser,dbsPass, info);
+
         System.out.println("message sent!");
     }
 
@@ -36,13 +35,8 @@ public class EmailController {
         emailRenter();
     }
     public void emailRenter() {
-        List<Messages> listEmails= model.getMessages();
-        for (int i = 0; i < listEmails.size(); i++) {
-            if (this.email.equals(listEmails.get(i).getEmail())) {
-                System.out.println("message sent!");
-            } else {
-                System.out.println("you have never been contacted by this email!");
-            }
-        }
+    
+        System.out.println("message sent!");
+    
     }
 }
