@@ -1,10 +1,6 @@
 package Controller;
 
-import Model.ImportData;
-import Model.Landlord;
-import Model.ImportData;
-import Model.Update;
-import View.*;
+import Model.*;
 
 import java.util.List;
 
@@ -16,14 +12,19 @@ public class LoginController {
     ImportData model = new ImportData(dbsPath,
             dbsUser,dbsPass);
 
+    public static String USER;
+
+    public List<RRenter> rentList = model.getRegistRenters();
+    public List<Landlord> landList = model.getLandlords();
+
     public boolean rLogin(String username, String password) { //might not even need to be static
-        List<RegisteredRenter> rentList = model.getRegisteredRenters();
         boolean valid = false;
         for (int i = 0; i < rentList.size(); i++) {
-            if (username == rentlist.get(i).getUsername() && password == rentList.get(i).getPassword())
+            if (username == rentList.get(i).getUsername() && password == rentList.get(i).getPassword())
                 valid = true;
         }
         if (valid) {
+            this.USER = username;
             System.out.println("valid renter");
         } else {
             System.out.println("invalid renter");
@@ -35,10 +36,11 @@ public class LoginController {
         List<Manager> mgrList = model.getManagers();
         boolean valid = false;
         for (int i = 0; i < mgrList.size(); i++) {
-            if (username == mgrList.get(i).getUsername() && password == mgrList.get(i).getPassword())
+            if (username.equals(mgrList.get(i).getUsername()) && password.equals(mgrList.get(i).getPassword()))
                 valid = true;
         }
         if (valid) {
+            this.USER = username;
             System.out.println("valid manager");
         } else {
             System.out.println("invalid manager");
@@ -50,10 +52,11 @@ public class LoginController {
         List<Landlord> landList = model.getLandlords();
         boolean valid = false;
         for (int i = 0; i < landList.size(); i++) {
-            if (username == landList.get(i).getUsername() && password == landList.get(i).getPassword())
+            if (username.equals(landList.get(i).getUsername()) && password.equals(landList.get(i).getPassword()))
                 valid = true;
         }
         if (valid) {
+            this.USER = username;
             System.out.println("valid landlord");
         } else {
             System.out.println("invalid landlord");
@@ -61,31 +64,34 @@ public class LoginController {
         return valid;
     }
 
-    public void rRegister(String id, String name, String username, String password, String email) {
-        //remove id's of users, username alone should be fine and unique, and email for notifications
-        String renter[] = {id, name, username, password};
-        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", renter)
+    public boolean rRegister(String name, String username, String password, String email) {
+        boolean reg = true;
+        for (int i = 0; i < rentList.size(); i++) {
+            if (username.equals(rentList.get(i).getUsername())) {
+                reg = false;
+                System.out.println("username already exists");
+                return reg;
+            }
+        }
+        String renter[] = {name, username, password, email};
+        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", renter);
+        System.out.println("registered!");
+        return reg;
     }
 
-//    public void rRegister(String name, String username, String password, String email) {
-//        //remove id's of users, username alone should be fine and unique, and email for notifications
-//        String renter[] = {name, email, username, password};
-//        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", renter);//ensure subsribed =0
-//    }
-
-    public void lRegister(String id, String name, String username, String password) {
-        //remove id's of users, username alone should be fine and unique, and email for notifications
-        String landlord[] = {id, name, username, password};
-        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", landlord);
+    public boolean lRegister(String name, String username, String password) {
+        boolean reg = true;
+        for (int i = 0; i < landList.size(); i++) {
+            if (username.equals(landList.get(i).getUsername())) {
+                reg = false;
+                System.out.println("username already exists");
+                return reg;
+            }
+        }
+        String landlord[] = {name, username, password};
+       Update.landlordAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", landlord);
+        System.out.println("registered!");
+        return reg;
     }
-
-    //preferred:
-//    public void lRegister(String name, String username, String password) {
-//        //remove id's of users, username alone should be fine and unique, and email for notifications
-//        String landlord[] = {name, username, password};
-//        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", landlord);
-//    }
-
-
 
 }
