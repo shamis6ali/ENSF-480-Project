@@ -74,13 +74,11 @@ DROP TABLE IF EXISTS `Messages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Messages` (
-  `Landlord_id` varchar(50) NOT NULL,
-  `Renter_id` varchar(50) NOT NULL,
+  `Property_id` varchar(50) NOT NULL,
+  `Email` varchar(100) DEFAULT NULL,
   `Message` varchar(250) DEFAULT NULL,
-  PRIMARY KEY (`Landlord_id`,`Renter_id`),
-  KEY `fk_renter_1_idx` (`Renter_id`),
-  CONSTRAINT `fk_landlord_1` FOREIGN KEY (`Landlord_id`) REFERENCES `Landlord` (`idLandlord`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_renter_1` FOREIGN KEY (`Renter_id`) REFERENCES `RRenter` (`idRenter`) ON DELETE CASCADE ON UPDATE CASCADE
+  PRIMARY KEY (`Property_id`),
+  CONSTRAINT `fk_Prop_id_1` FOREIGN KEY (`Property_id`) REFERENCES `Property` (`idProperty`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -226,4 +224,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-10 13:39:04
+-- Dump completed on 2021-12-10 20:04:40

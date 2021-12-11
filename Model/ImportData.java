@@ -242,7 +242,7 @@ public class ImportData {
             Statement myStmt = (Statement) connection.getDbConnect().createStatement();
             String query = "SELECT * FROM " + "Messages";
             String[] messageS = new String[3];
-            String[] columns = { "Landlord_id", "Renter_id", "Message"};
+            String[] columns = { "Property_id", "Email", "Message"};
 
             connection.setResults(((Statement) myStmt).executeQuery(query));
 

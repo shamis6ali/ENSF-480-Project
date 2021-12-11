@@ -219,8 +219,8 @@ public class Update {
         Update updt = new Update(url,username,password);
         try{
             String query = "INSERT INTO messages ("
-                    + " Landlord_id,"
-                    + " Renter_id,"
+                    + " Property_id,"
+                    + " Email,"
                     + " Message"
                     + " ) VALUES ("
                     + "?, ?, ? )";
@@ -239,16 +239,15 @@ public class Update {
         }
     }
 
-    public static void messageRemove(String url, String username, String password, String  lordID,String renterID) throws SQLException{
+    public static void messageRemove(String url, String username, String password,String propID) throws SQLException{
         Update updt = new Update(url, username, password);
         try{
 
-            String query = "DELETE FROM messages WHERE Landlord_id = ? AND Renter_id = ? ";
+            String query = "DELETE FROM messages WHERE Property_id = ? ";
             PreparedStatement mystmt = updt.connect.getDbConnect().prepareStatement(query);
-            mystmt.setString(1, lordID);
-            mystmt.setString(2, renterID);
-//
-//            // update the arraylists and close connection
+            mystmt.setString(1, propID);
+
+            // update the arraylists and close connection
             mystmt.executeUpdate();
             updt.connect.close();
 
