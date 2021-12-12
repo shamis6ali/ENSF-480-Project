@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package RentalGUI.src.main.java;
+
+import Controller.SearchController;
+
 /**
  *
  * @author alikh
@@ -173,9 +176,20 @@ public class RRenterSearch extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        //jComboBox1 type
+      //  String bedS
+//        int furnished = jCheckBox1.Checked ? 1 : 0;
+        //label1.Text = checkBox1.Checked ? "1" : "0";
+         //SearchController searcher = new SearchController(jComboBox1, 1,jComboBox2, Double.parseDouble(jTextField1.getText()),Double.parseDouble(jTextField2.getText()) );
+
+
         SearchResults se = new SearchResults();
         se.setVisible(true);
         dispose();
+
+        //
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

@@ -9,9 +9,9 @@ import Model.*;
 import static Controller.LoginController.USER;
 
 public class StatusController {
-    String dbsUser = "root";
-    String dbsPass = "Hiba0105!";
-    String dbsPath = "jdbc:mysql://127.0.0.1:3306/Property_Rental";
+    String dbsUser = "tom";
+    String dbsPass = "password";
+    String dbsPath = "jdbc:mysql://127.0.0.1:3306/test";
     ImportData model = new ImportData(dbsPath,
             dbsUser,dbsPass);
     
@@ -34,7 +34,7 @@ public class StatusController {
         for (int i = 0; i < properties.size(); i++) {
             if (USER.equals(properties.get(i).getLandlordId()) && propID.equals(properties.get(i).getIdProperty())) {
                if (status.equals("rented") || status.equals("cancelled") || status.equals("suspended")) {
-                   Update.setStatus(dbsPath, dbsUser,dbsPass, propID, status)
+                   Update.setStatus(dbsPath, dbsUser,dbsPass, propID, status);
                }
             }
 
@@ -46,7 +46,7 @@ public class StatusController {
         for (int i = 0; i < properties.size(); i++) {
                 if ((status.equals("rented") || status.equals("cancelled") || status.equals("suspended") ||
                         status.equals("active")) && propID.equals(properties.get(i).getIdProperty())) {
-                    Update.setStatus(dbsPath, dbsUser, dbsPass, propID, status)
+                    Update.setStatus(dbsPath, dbsUser, dbsPass, propID, status);
                 }
             }
 
@@ -58,7 +58,7 @@ public class StatusController {
         List<Property> properties= model.getProperties();
         for (int i = 0; i < properties.size(); i++) {
                 if (propID.equals(properties.get(i).getIdProperty())) {
-                    Update.setStatus(dbsPath, dbsUser, dbsPass, propID, status)
+                    Update.setStatus(dbsPath, dbsUser, dbsPass, propID, status);
                 }
             }
         

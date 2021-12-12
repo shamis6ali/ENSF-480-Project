@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LandlordController {
-    String dbsUser = "root";
-    String dbsPass = "Hiba0105!";
-    String dbsPath = "jdbc:mysql://127.0.0.1:3306/Property_Rental";
+    String dbsUser = "tom";
+    String dbsPass = "password";
+    String dbsPath = "jdbc:mysql://127.0.0.1:3306/test";
     ImportData model = new ImportData(dbsPath,
             dbsUser,dbsPass);
 

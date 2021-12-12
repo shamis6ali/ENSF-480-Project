@@ -52,9 +52,9 @@ public class Test {
 //        Update.propertyRemove("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", "aswe21");
         String renter[] = {"123sdasd", "Sh ee", "User", "pass"};
        // Update.renterAdd("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", renter);
-        String message[] = {"BlDy02", "BgTs02", "This is a test message"};
-       // Update.messageAdd("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", message);
-        Update.messageRemove("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", "BlDy02", "BgTs02");
+        String message[] = {"pqro05", "somebody", "This is a test message"};
+       Update.messageAdd("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", message);
+        //Update.messageRemove("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", "BlDy02", "BgTs02");
 
             LoginController testLogin = new LoginController();
             if(testLogin.rLogin("BgTs02","123456789")){
@@ -63,7 +63,7 @@ public class Test {
                 System.out.println("sadge");
             }
 
-        System.out.println(testLogin.getUSER());
+        //System.out.println(testLogin.getUSER());
 
 //        properties = testData.getProperties();
 //        for(Property p : properties){

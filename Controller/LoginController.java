@@ -2,12 +2,13 @@ package Controller;
 
 import Model.*;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class LoginController {
-    String dbsUser = "root";
-    String dbsPass = "Hiba0105!";
-    String dbsPath = "jdbc:mysql://127.0.0.1:3306/Property_Rental";
+    String dbsUser = "tom";
+    String dbsPass = "password";
+    String dbsPath = "jdbc:mysql://127.0.0.1:3306/test";
 
     ImportData model = new ImportData(dbsPath,
             dbsUser,dbsPass);
@@ -20,7 +21,7 @@ public class LoginController {
     public boolean rLogin(String username, String password) { //might not even need to be static
         boolean valid = false;
         for (int i = 0; i < rentList.size(); i++) {
-            if (username == rentList.get(i).getUsername() && password == rentList.get(i).getPassword())
+            if (username.equals(rentList.get(i).getUsername())  && password.equals(rentList.get(i).getPassword()))
                 valid = true;
         }
         if (valid) {
@@ -64,7 +65,7 @@ public class LoginController {
         return valid;
     }
 
-    public boolean rRegister(String name, String username, String password, String email) {
+    public boolean rRegister(String name, String username, String password, String email) throws SQLException {
         boolean reg = true;
         for (int i = 0; i < rentList.size(); i++) {
             if (username.equals(rentList.get(i).getUsername())) {
@@ -74,12 +75,12 @@ public class LoginController {
             }
         }
         String renter[] = {name, username, password, email};
-        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", renter);
+        Update.renterAdd("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", renter);
         System.out.println("registered!");
         return reg;
     }
 
-    public boolean lRegister(String name, String username, String password) {
+    public boolean lRegister(String name, String username, String password) throws SQLException {
         boolean reg = true;
         for (int i = 0; i < landList.size(); i++) {
             if (username.equals(landList.get(i).getUsername())) {
@@ -89,7 +90,7 @@ public class LoginController {
             }
         }
         String landlord[] = {name, username, password};
-       Update.landlordAdd("jdbc:mysql://127.0.0.1:3306/Property_Rental", "root", "Hiba0105!", landlord);
+       Update.landlordAdd("jdbc:mysql://127.0.0.1:3306/test", "tom", "password", landlord);
         System.out.println("registered!");
         return reg;
     }

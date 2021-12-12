@@ -3,16 +3,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package RentalGUI.src.main.java;
+import Model.*;
+import java.util.*;
+import Controller.*;
 /**
  *
  * @author alikh
  */
 public class SearchResults extends javax.swing.JFrame {
 
+        List<Property> pr = new ArrayList<>();
     /**
      * Creates new form SearchResults
      */
     public SearchResults() {
+        initComponents();
+    }
+    public SearchResults(List<Property> p) {
+        pr = p;
         initComponents();
     }
 

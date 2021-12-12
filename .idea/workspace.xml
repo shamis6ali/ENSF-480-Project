@@ -5,9 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86caac59-86b6-45a6-8847-d0a7b3f34b9e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_27.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_271.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_272.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_273.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_274.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_275.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controller/Controller.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ENSF-480-Project1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/Model.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RentalGUI/RentalGUI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/EmailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/FeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/FeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/LandlordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/LandlordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/ManagerController" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/ManagerController" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/ManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/PropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/RegisteredRenterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/RegisteredRenterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/StatusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/StatusController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENSF-480-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ENSF-480-Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Database/SQL File.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Database/SQL File.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentalGUI/src/main/java/LandingGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentalGUI/src/main/java/LandingGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentalGUI/src/main/java/RRenterSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentalGUI/src/main/java/RRenterSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentalGUI/src/main/java/RenterLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentalGUI/src/main/java/RenterLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentalGUI/src/main/java/SearchResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentalGUI/src/main/java/SearchResults.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,20 +65,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/mysql-connector-java-8.0.27.jar" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.LandingGUI">
     <configuration name="LandingGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RentalGUI.src.main.java.LandingGUI" />
-      <module name="ENSF-480-Project" />
+      <module name="ENSF-480-Project1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="RentalGUI.src.main.java.*" />
@@ -64,6 +94,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Model.Test" />
+      <module name="ENSF-480-Project1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Model.*" />
@@ -88,8 +119,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test" />
         <item itemvalue="Application.LandingGUI" />
+        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -104,12 +135,26 @@
       <workItem from="1639089966674" duration="84000" />
       <workItem from="1639090074167" duration="230000" />
       <workItem from="1639090327113" duration="19914000" />
-      <workItem from="1639198093965" duration="106000" />
+      <workItem from="1639198093965" duration="594000" />
+      <workItem from="1639198741804" duration="58000" />
+      <workItem from="1639199060917" duration="8120000" />
+      <workItem from="1639277122964" duration="792000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

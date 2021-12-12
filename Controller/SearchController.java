@@ -10,9 +10,9 @@ import java.util.*;
 import static Controller.LoginController.USER;
 
 public class SearchController {
-    String dbsUser = "root";
-    String dbsPass = "Hiba0105!";
-    String dbsPath = "jdbc:mysql://127.0.0.1:3306/Property_Rental";
+    String dbsUser = "tom";
+    String dbsPass = "password";
+    String dbsPath = "jdbc:mysql://127.0.0.1:3306/test";
     ImportData model = new ImportData(dbsPath,
             dbsUser,dbsPass);
     String type;
@@ -42,14 +42,14 @@ public class SearchController {
         beds = Double.toString(bedrooms);
         baths = Double.toString(bathrooms);
     }
-
-    public List<Property> search() {
-        if (bedrooms <= 0 || bathrooms <= 0 ) {
-            return;
-        }
-        results = model.returnSearchResults(type, furnished, unfurnished, quadrant, bedrooms, bathrooms);
-        return results;
-    }
+//
+//    public List<Property> search() {
+//        if (bedrooms <= 0 || bathrooms <= 0 ) {
+//            return;
+//        }
+//        results = model.returnSearchResults(type, furnished, unfurnished, quadrant, bedrooms, bathrooms);
+//        return results;
+//    }
 
     public void registeredSearch() throws SQLException {
         //if subscribe = 1, then save this info in the searchCrit table!

@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+//import Controller.*;
 package RentalGUI.src.main.java;
+import Controller.*;
 /**
  *
  * @author alikh
@@ -155,9 +157,22 @@ public class RenterLogin extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        RRenterSearch s = new RRenterSearch();
-        s.setVisible(true);
-        dispose();
+        //jPasswordField1
+    //jTextField2
+        LoginController login = new LoginController();
+        String username = jTextField2.getText();
+        String password = jPasswordField1.getText();
+
+        if(login.rLogin(username, password)) {
+            RRenterSearch s = new RRenterSearch();
+            s.setVisible(true);
+            dispose();//if ur passing this in, otherwise we'll just ask for an ID input every single time
+        }
+
+
+//        RRenterSearch s = new RRenterSearch();
+//        s.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -210,7 +225,7 @@ public class RenterLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JTextField jPasswordField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
