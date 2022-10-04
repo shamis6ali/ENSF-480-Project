@@ -1,5 +1,12 @@
 # ENSF-480-Project
 
+Team Members:
+Shamis Ali
+Tom
+Haniya Ahmed
+Muhammad Ali Khan (Momin)
+
+
 To access the database file for this project go to:
 Model->Database
 
